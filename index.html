@@ -4,16 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>izybe.app | Cloud Operations Software for Restaurants & Hotels</title>
-
+  <title>izybe.app | Cloud Operations for Restaurants & Hotels</title>
   <meta
     name="description"
-    content="Cloud-based SaaS for restaurant and hotel operations. Manage staff, stock, checklists and shifts in real time from your browser. Commercial launch coming soon."
+    content="Cloud-based restaurant and hotel operations software for staff, stock, checklists and shifts. Commercial launch coming soon. AI assistance on the roadmap."
   >
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#f3f1e9">
   <meta name="application-name" content="izybe.app">
-
   <link rel="canonical" href="https://izybe.app/">
   <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
@@ -29,7 +27,7 @@
   >
   <meta
     property="og:description"
-    content="Two years in development. Currently in demo use and trials at selected large London restaurants. A cloud-based hospitality platform, launching commercially soon."
+    content="Two years in development. London restaurant demos underway. Cloud-based hospitality operations, launching commercially soon. AI assistance is a future roadmap initiative."
   >
   <meta property="og:image" content="https://izybe.app/images/dashboard.png">
   <meta property="og:image:alt" content="izybe.app hospitality operations dashboard">
@@ -37,16 +35,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta
     name="twitter:title"
-    content="izybe.app — Cloud operations for restaurants & hotels"
+    content="izybe.app — Cloud operations for hospitality"
   >
   <meta
     name="twitter:description"
-    content="Real-time hospitality operations through your browser. In development for two years, with London restaurant demos underway. Commercial launch coming soon."
+    content="Staff, stock and daily workflows in one browser-based workspace. Commercial launch coming soon. Future AI assistance under exploration."
   >
   <meta name="twitter:image" content="https://izybe.app/images/dashboard.png">
-  <meta name="twitter:image:alt" content="izybe.app hospitality operations dashboard">
+  <meta name="twitter:image:alt" content="izybe.app hospitality dashboard">
 
-  <!-- Structured data -->
+  <!-- AI is intentionally not listed as an available software feature. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,9 +79,9 @@
       {
         "@type": "WebPage",
         "@id": "https://izybe.app/#webpage",
-        "name": "izybe.app | Cloud Operations Software for Restaurants & Hotels",
+        "name": "izybe.app | Cloud Operations for Restaurants & Hotels",
         "url": "https://izybe.app/",
-        "description": "Cloud-based SaaS for restaurant and hotel operations, with real-time workflows through a compatible web browser. Commercial launch coming soon.",
+        "description": "A cloud-based hospitality operations platform approaching commercial launch, with AI assistance being explored for future updates.",
         "inLanguage": "en",
         "isPartOf": {
           "@id": "https://izybe.app/#website"
@@ -101,7 +99,7 @@
         "applicationSubCategory": "Restaurant and hotel operations management",
         "operatingSystem": "iOS, Android, Windows, Linux, macOS",
         "browserRequirements": "Requires an internet connection and a compatible modern web browser.",
-        "description": "A browser-based, cloud SaaS platform for real-time restaurant and hotel operations. Developed over two years and currently in demo use and trials at selected large restaurants in London. Commercial launch coming soon.",
+        "description": "A cloud-based SaaS platform for real-time restaurant and hotel operations. Developed over two years and currently in demo use and trials at selected large London restaurants. Commercial launch coming soon.",
         "image": "https://izybe.app/images/dashboard.png",
         "publisher": {
           "@id": "https://izybe.app/#organization"
@@ -113,11 +111,10 @@
         "featureList": [
           "Cloud-based SaaS delivery",
           "Real-time operational workflows",
-          "Cross-platform access through a compatible browser",
-          "Checklist and list template management",
+          "Browser-based access across supported operating systems",
+          "Checklist and template management",
           "Staff management and time tracking",
-          "Hierarchical warehouse management",
-          "Location-based stock and transfers",
+          "Warehouse and location-based stock management",
           "Internal stock ordering",
           "Weekly shift planning",
           "Real-time team messaging and polls",
@@ -150,7 +147,10 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
+    }
     body {
       margin: 0;
       background: var(--paper);
@@ -166,7 +166,10 @@
     img { display: block; max-width: 100%; }
     h1, h2, h3, p, figure { margin: 0; }
     ::selection { background: var(--lime); color: var(--ink); }
-    :focus-visible { outline: 3px solid #769a24; outline-offset: 5px; }
+    :focus-visible {
+      outline: 3px solid #769a24;
+      outline-offset: 5px;
+    }
     [hidden] { display: none !important; }
 
     .container {
@@ -216,7 +219,12 @@
     .button-dark:hover { background: #343b2b; }
     .button-outline { border-color: var(--line); background: transparent; }
     .button-outline:hover { background: var(--white); }
-    .arrow { flex-shrink: 0; font-size: 21px; font-weight: 400; line-height: 1; }
+    .arrow {
+      flex-shrink: 0;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 1;
+    }
     .sr-only {
       position: absolute;
       width: 1px;
@@ -251,10 +259,15 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 20px;
       height: 84px;
     }
-    .brand { display: inline-flex; align-items: center; gap: 11px; flex-shrink: 0; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
     .brand-mark {
       width: 44px;
       height: 44px;
@@ -263,13 +276,26 @@
       background: #000;
     }
     .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
-    .brand-name { font-size: 25px; font-weight: 750; letter-spacing: -.065em; }
+    .brand-name {
+      font-size: 25px;
+      font-weight: 750;
+      letter-spacing: -.065em;
+    }
     .brand-name span { font-weight: 400; opacity: .65; }
-    .desktop-nav { display: flex; gap: 23px; }
-    .desktop-nav a { color: var(--muted); font-size: 12px; transition: color .2s; }
+    .desktop-nav { display: flex; gap: 22px; }
+    .desktop-nav a {
+      color: var(--muted);
+      font-size: 12px;
+      transition: color .2s;
+    }
     .desktop-nav a:hover { color: var(--ink); }
+    .desktop-nav .nav-ai { color: #52633b; }
     .header-actions { display: flex; align-items: center; }
-    .header-cta { min-height: 43px; padding: 12px 17px; font-size: 11px; }
+    .header-cta {
+      min-height: 43px;
+      padding: 12px 17px;
+      font-size: 11px;
+    }
     .menu-toggle {
       display: none;
       width: 43px;
@@ -326,9 +352,45 @@
       line-height: 1.8;
     }
     .hero-description strong { color: var(--ink); font-weight: 500; }
-    .hero-buttons { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
-    .hero-footnote { margin-top: 22px; color: var(--muted); font-size: 10px; line-height: 1.8; }
-    .hero-footnote::before { content: "↳"; margin-right: 8px; color: var(--ink); font-size: 17px; }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 28px;
+    }
+    .hero-footnote {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+    .hero-footnote::before {
+      content: "↳";
+      margin-right: 8px;
+      color: var(--ink);
+      font-size: 17px;
+    }
+    .ai-teaser {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 11px;
+      margin-top: 14px;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+    .ai-teaser span {
+      padding: 5px 9px;
+      border: 1px solid #c6d2ad;
+      border-radius: 100px;
+      background: #e8efda;
+      color: #52633b;
+      font: 9px/1.5 ui-monospace, monospace;
+    }
+    .ai-teaser:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
     .hero-art {
       position: relative;
       isolation: isolate;
@@ -390,7 +452,12 @@
       font: 8px ui-monospace, monospace;
       letter-spacing: .12em;
     }
-    .device-top i { width: 5px; height: 5px; border-radius: 50%; background: var(--lime); }
+    .device-top i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
     .float-label {
       position: absolute;
       z-index: 3;
@@ -403,8 +470,16 @@
       background: var(--white);
       box-shadow: 0 12px 35px #161c1010;
     }
-    .float-label strong { display: block; margin-bottom: 5px; font-size: 11px; }
-    .float-label small { display: block; color: var(--muted); font-size: 10px; }
+    .float-label strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 11px;
+    }
+    .float-label small {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+    }
     .float-symbol { font-size: 25px; }
     .float-one { top: 95px; right: -7px; transform: rotate(5deg); }
     .float-two { bottom: 80px; left: -12px; transform: rotate(3deg); }
@@ -433,11 +508,19 @@
       border-left: 1px solid var(--line);
     }
     .hero-bottom > div:first-child { padding-left: 0; border-left: 0; }
-    .hero-bottom strong { font-size: 24px; font-weight: 500; letter-spacing: -.04em; }
-    .hero-bottom small { color: var(--muted); font-size: 11px; line-height: 1.5; }
+    .hero-bottom strong {
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -.04em;
+    }
+    .hero-bottom small {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
     .intro-small { max-width: 230px; font-size: 13px; line-height: 1.6; }
 
-    /* SHARED HEADINGS */
+    /* SHARED SECTION HEADINGS */
     .section-heading {
       display: flex;
       align-items: flex-end;
@@ -454,7 +537,7 @@
       line-height: 1.8;
     }
 
-    /* CLOUD, PLATFORMS & HOSPITALITY */
+    /* CLOUD & DEVICE ACCESS */
     .cloud-grid {
       display: grid;
       grid-template-columns: 1.15fr .85fr;
@@ -468,7 +551,11 @@
       border-radius: 25px;
       background: var(--white);
     }
-    .cloud-card h3 { font-size: 31px; font-weight: 500; letter-spacing: -.05em; }
+    .cloud-card h3 {
+      font-size: 31px;
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
     .cloud-card > p {
       max-width: 520px;
       margin-top: 18px;
@@ -515,12 +602,13 @@
       gap: 8px;
       margin-bottom: 30px;
       color: var(--lime);
-      font: 10px ui-monospace, monospace;
+      font: 10px/1.5 ui-monospace, monospace;
     }
     .cloud-label::before {
       content: "";
       width: 6px;
       height: 6px;
+      flex-shrink: 0;
       border-radius: 50%;
       background: currentColor;
     }
@@ -531,7 +619,13 @@
       padding: 0;
       list-style: none;
     }
-    .cloud-points li { display: flex; gap: 11px; color: #c8cfbe; font-size: 12px; line-height: 1.7; }
+    .cloud-points li {
+      display: flex;
+      gap: 11px;
+      color: #c8cfbe;
+      font-size: 12px;
+      line-height: 1.7;
+    }
     .cloud-points li::before { content: "✓"; color: var(--lime); }
     .audience-grid {
       display: grid;
@@ -544,11 +638,24 @@
       border: 1px solid var(--line);
       border-radius: 21px;
     }
-    .audience-card > span { color: #63734b; font: 10px ui-monospace, monospace; }
-    .audience-card h3 { margin-top: 15px; font-size: 23px; font-weight: 500; letter-spacing: -.04em; }
-    .audience-card p { margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.85; }
+    .audience-card > span {
+      color: #63734b;
+      font: 10px ui-monospace, monospace;
+    }
+    .audience-card h3 {
+      margin-top: 15px;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -.04em;
+    }
+    .audience-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+    }
 
-    /* DEVELOPMENT STORY */
+    /* DEVELOPMENT JOURNEY */
     .story { padding-top: 0; }
     .story-panel {
       display: grid;
@@ -566,12 +673,17 @@
       line-height: 1.04;
       letter-spacing: -.06em;
     }
-    .story-copy > p { margin-top: 22px; color: #59634d; font-size: 13px; line-height: 1.9; }
+    .story-copy > p {
+      margin-top: 22px;
+      color: #59634d;
+      font-size: 13px;
+      line-height: 1.9;
+    }
     .story-copy .button { margin-top: 25px; }
     .timeline { margin: 0; padding: 0; list-style: none; }
     .timeline li {
       position: relative;
-      padding: 0 0 30px 29px;
+      padding: 0 0 29px 29px;
       border-left: 1px solid #bbc6a2;
     }
     .timeline li:last-child { padding-bottom: 0; }
@@ -586,16 +698,34 @@
       background: #6e814e;
       box-shadow: 0 0 0 5px #e8eddc;
     }
-    .timeline li:last-child::before { background: var(--ink); }
     .timeline small { color: #5c694b; font: 10px ui-monospace, monospace; }
-    .timeline h3 { margin-top: 11px; font-size: 21px; font-weight: 500; letter-spacing: -.035em; }
-    .timeline p { margin-top: 10px; color: #59634d; font-size: 12px; line-height: 1.85; }
+    .timeline h3 {
+      margin-top: 11px;
+      font-size: 21px;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+    .timeline p {
+      margin-top: 10px;
+      color: #59634d;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+    .timeline a { text-decoration: underline; text-underline-offset: 3px; }
 
     /* MODULES */
-    .modules { border-radius: 38px 38px 0 0; background: var(--dark); color: var(--paper); }
+    .modules {
+      border-radius: 38px 38px 0 0;
+      background: var(--dark);
+      color: var(--paper);
+    }
     .modules .eyebrow { color: var(--lime); }
     .modules .section-heading > p { color: #afb7a3; }
-    .module-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .module-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
     .module-card {
       display: flex;
       flex-direction: column;
@@ -607,8 +737,18 @@
       transition: transform .35s var(--ease), border-color .35s;
     }
     .module-card:hover { transform: translateY(-5px); border-color: #919f70; }
-    .module-card.featured { grid-column: span 2; min-height: 269px; background: var(--lime); color: var(--ink); }
-    .module-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+    .module-card.featured {
+      grid-column: span 2;
+      min-height: 269px;
+      background: var(--lime);
+      color: var(--ink);
+    }
+    .module-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
     .module-icon {
       display: grid;
       place-items: center;
@@ -621,26 +761,87 @@
     }
     .featured .module-icon { color: var(--ink); }
     .module-number { font: 10px ui-monospace, monospace; opacity: .65; }
-    .module-card h3 { font-size: 20px; font-weight: 500; letter-spacing: -.04em; }
+    .module-card h3 {
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: -.04em;
+    }
     .module-card.featured h3 { font-size: 31px; }
-    .module-card p { margin-top: 12px; color: #b6beab; font-size: 12px; line-height: 1.75; }
+    .module-card p {
+      margin-top: 12px;
+      color: #b6beab;
+      font-size: 12px;
+      line-height: 1.75;
+    }
     .module-card.featured p { max-width: 365px; color: #4e5938; }
-    .module-link { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 25px; font-size: 10px; }
+    .module-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 25px;
+      font-size: 10px;
+    }
     .module-link::after { content: "↗"; font-size: 21px; }
-    .module-bottom { display: flex; justify-content: space-between; gap: 25px; padding-top: 28px; color: #aeb6a1; font: 10px/1.6 ui-monospace, monospace; }
+    .module-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      padding-top: 28px;
+      color: #aeb6a1;
+      font: 10px/1.6 ui-monospace, monospace;
+    }
 
     /* SCREEN EXPLORER */
     .showcase { overflow: hidden; }
-    .showcase-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 85px; align-items: center; }
+    .showcase-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 85px;
+      align-items: center;
+    }
     .showcase-copy .eyebrow { margin-bottom: 24px; }
-    .showcase-copy > p { max-width: 425px; margin-top: 24px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .showcase-copy > p {
+      max-width: 425px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
     .screen-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-    .screen-tab { padding: 11px 15px; border: 1px solid var(--line); border-radius: 100px; background: transparent; font-size: 11px; }
-    .screen-tab[aria-pressed="true"] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
-    .screen-note { display: flex; align-items: flex-start; gap: 17px; min-height: 98px; margin-top: 33px; padding-top: 23px; border-top: 1px solid var(--line); }
-    .screen-note > span { padding-top: 3px; color: var(--muted); font: 11px ui-monospace, monospace; }
+    .screen-tab {
+      padding: 11px 15px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      background: transparent;
+      font-size: 11px;
+    }
+    .screen-tab[aria-pressed="true"] {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .screen-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      min-height: 98px;
+      margin-top: 33px;
+      padding-top: 23px;
+      border-top: 1px solid var(--line);
+    }
+    .screen-note > span {
+      padding-top: 3px;
+      color: var(--muted);
+      font: 11px ui-monospace, monospace;
+    }
     .screen-note strong { font-size: 14px; }
-    .screen-note p { margin-top: 9px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+    .screen-note p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.7;
+    }
     .screen-stage {
       position: relative;
       isolation: isolate;
@@ -655,9 +856,30 @@
       border-radius: 28px;
       background: #e5e8d9;
     }
-    .screen-stage::before { content: ""; position: absolute; z-index: -1; width: 480px; height: 480px; border: 1px solid #c1c8ab; border-radius: 50%; }
-    .stage-label { position: absolute; top: 23px; left: 25px; color: #596249; font: 9px ui-monospace, monospace; letter-spacing: .14em; }
-    .stage-plus { position: absolute; top: 20px; right: 24px; color: #596249; font-size: 22px; }
+    .screen-stage::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 480px;
+      height: 480px;
+      border: 1px solid #c1c8ab;
+      border-radius: 50%;
+    }
+    .stage-label {
+      position: absolute;
+      top: 23px;
+      left: 25px;
+      color: #596249;
+      font: 9px ui-monospace, monospace;
+      letter-spacing: .14em;
+    }
+    .stage-plus {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: #596249;
+      font-size: 22px;
+    }
     .screen-image-shell {
       display: grid;
       place-items: center;
@@ -670,79 +892,393 @@
       box-shadow: 17px 25px 40px #35412328;
       transform: rotate(3deg);
     }
-    .screen-image-shell img { width: 100%; height: 100%; min-height: 0; object-fit: contain; border-radius: 15px; }
-    .screen-caption { display: flex; align-items: center; gap: 9px; margin-top: 34px; color: #596249; font: 9px ui-monospace, monospace; }
-    .screen-caption::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-    .image-fallback { padding: 35px 20px; color: #cbd4bd; text-align: center; font-size: 12px; line-height: 1.8; }
+    .screen-image-shell img {
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+    .screen-caption {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 34px;
+      color: #596249;
+      font: 9px ui-monospace, monospace;
+    }
+    .screen-caption::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .image-fallback {
+      padding: 35px 20px;
+      color: #cbd4bd;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.8;
+    }
 
     /* WORKFLOW */
-    .workflow { padding-block: 70px 78px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .workflow-top { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 45px; }
+    .workflow {
+      padding-block: 70px 78px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .workflow-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 45px;
+    }
     .workflow-top > p { color: var(--muted); font-size: 12px; }
     .workflow-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
     .workflow-step { padding-inline: 33px; border-left: 1px solid var(--line); }
     .workflow-step:first-child { padding-left: 0; border-left: 0; }
     .workflow-step:last-child { padding-right: 0; }
-    .step-number { display: inline-block; margin-bottom: 24px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 100px; font: 10px ui-monospace, monospace; }
-    .workflow-step h3 { font-size: 27px; font-weight: 500; letter-spacing: -.045em; }
-    .workflow-step p { margin-top: 15px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .step-number {
+      display: inline-block;
+      margin-bottom: 24px;
+      padding: 8px 10px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font: 10px ui-monospace, monospace;
+    }
+    .workflow-step h3 {
+      font-size: 27px;
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    .workflow-step p {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
 
-    /* USER GUIDE */
-    .wiki-layout { display: grid; grid-template-columns: .75fr 1.25fr; gap: 80px; align-items: start; }
+    /* AI ROADMAP */
+    .ai-panel {
+      position: relative;
+      overflow: hidden;
+      padding: 52px;
+      border: 1px solid var(--dark-line);
+      border-radius: 28px;
+      background: var(--dark);
+      color: var(--paper);
+    }
+    .ai-panel::before {
+      content: "";
+      position: absolute;
+      top: -160px;
+      right: -120px;
+      width: 430px;
+      height: 430px;
+      border: 1px solid #404a32;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .ai-topline {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 32px;
+    }
+    .ai-topline .eyebrow { color: var(--lime); }
+    .ai-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 13px;
+      border: 1px solid #596a40;
+      border-radius: 100px;
+      color: var(--lime);
+      background: #29331f;
+      font: 10px/1.5 ui-monospace, monospace;
+    }
+    .ai-status::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: currentColor;
+    }
+    .ai-layout {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 65px;
+      align-items: start;
+    }
+    .ai-title {
+      font-size: clamp(40px, 4.9vw, 68px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -.06em;
+      text-wrap: balance;
+    }
+    .ai-title span { color: var(--lime); }
+    .ai-copy > p {
+      max-width: 530px;
+      margin-top: 24px;
+      color: #b8c1ac;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+    .ai-feature-list { display: grid; margin: 0; padding: 0; list-style: none; }
+    .ai-feature-list li { padding: 22px 0; border-bottom: 1px solid var(--dark-line); }
+    .ai-feature-list li:first-child { padding-top: 0; }
+    .ai-feature-list h3 {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -.02em;
+    }
+    .ai-feature-list h3::before { content: "↗"; color: var(--lime); }
+    .ai-feature-list p {
+      margin-top: 11px;
+      color: #b8c1ac;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+    .ai-privacy {
+      position: relative;
+      display: grid;
+      grid-template-columns: .6fr 1.4fr;
+      gap: 30px;
+      margin-top: 40px;
+      padding: 26px;
+      border: 1px solid #465337;
+      border-radius: 18px;
+      background: #222b1b;
+    }
+    .ai-privacy h3 {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -.035em;
+    }
+    .ai-privacy p { color: #c1cbb5; font-size: 12px; line-height: 1.9; }
+    .ai-privacy p + p { margin-top: 13px; }
+    .ai-disclaimer {
+      position: relative;
+      margin-top: 24px;
+      color: #aab59e;
+      font-size: 11px;
+      line-height: 1.85;
+    }
+    .ai-disclaimer strong { color: var(--paper); font-weight: 500; }
+
+    /* GUIDE */
+    .guide-section { padding-top: 0; }
+    .wiki-layout {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: start;
+    }
     .wiki-intro { position: sticky; top: 125px; }
     .wiki-intro .eyebrow { margin-bottom: 24px; }
-    .wiki-intro > p { max-width: 335px; margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.85; }
-    .wiki-label { display: inline-flex; margin-top: 24px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 100px; font: 9px ui-monospace, monospace; }
+    .wiki-intro > p {
+      max-width: 335px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
+    .wiki-label {
+      display: inline-flex;
+      margin-top: 24px;
+      padding: 9px 12px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      font: 9px ui-monospace, monospace;
+    }
     .guide-index { display: grid; gap: 12px; margin-top: 30px; }
-    .guide-index a { width: fit-content; padding-bottom: 4px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .guide-index a {
+      width: fit-content;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.6;
+    }
     .guide-index a:hover { color: var(--ink); }
-    .search { display: flex; align-items: center; gap: 13px; margin-bottom: 15px; padding-inline: 17px; border: 1px solid var(--line); border-radius: 13px; background: #eae9df; }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 15px;
+      padding-inline: 17px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #eae9df;
+    }
     .search > span:first-child { color: var(--muted); font-size: 24px; }
-    .search input { width: 100%; min-width: 0; height: 56px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 12px; }
+    .search input {
+      width: 100%;
+      min-width: 0;
+      height: 56px;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-size: 12px;
+    }
     .search:focus-within { outline: 2px solid #769a24; outline-offset: 3px; }
     .search input:focus-visible { outline: 0; }
-    .search-count { white-space: nowrap; color: var(--muted); font: 10px ui-monospace, monospace; }
+    .search-count {
+      white-space: nowrap;
+      color: var(--muted);
+      font: 10px ui-monospace, monospace;
+    }
     .wiki-item { border-bottom: 1px solid var(--line); scroll-margin-top: 104px; }
-    .wiki-item summary { display: flex; align-items: center; gap: 17px; padding: 25px 0; list-style: none; cursor: pointer; }
-    .wiki-item summary::-webkit-details-marker, .faq-item summary::-webkit-details-marker { display: none; }
-    .wiki-item summary::after, .faq-item summary::after { content: "+"; flex-shrink: 0; margin-left: auto; font-size: 25px; font-weight: 300; }
+    .wiki-item summary {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      padding: 25px 0;
+      list-style: none;
+      cursor: pointer;
+    }
+    .wiki-item summary::-webkit-details-marker,
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .wiki-item summary::after, .faq-item summary::after {
+      content: "+";
+      flex-shrink: 0;
+      margin-left: auto;
+      font-size: 25px;
+      font-weight: 300;
+    }
     .wiki-item[open] summary::after, .faq-item[open] summary::after { content: "−"; }
     .wiki-index { color: var(--muted); font: 10px ui-monospace, monospace; }
     .wiki-item h3 { font-size: 17px; font-weight: 500; letter-spacing: -.02em; }
     .wiki-body { padding: 0 10px 29px 33px; }
-    .wiki-body p, .wiki-body li { color: var(--muted); font-size: 12px; line-height: 1.9; }
-    .wiki-body h4 { margin: 21px 0 10px; font-size: 11px; letter-spacing: .055em; text-transform: uppercase; }
+    .wiki-body p, .wiki-body li {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .wiki-body h4 {
+      margin: 21px 0 10px;
+      font-size: 11px;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
     .wiki-body ol, .wiki-body ul { margin: 0; padding-left: 18px; }
     .wiki-body li + li { margin-top: 7px; }
-    .wiki-warning { margin-top: 18px; padding: 12px 14px; border-left: 2px solid #849653; background: #e8ebdc; color: #4e593e; font-size: 11px; line-height: 1.85; }
+    .wiki-warning {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-left: 2px solid #849653;
+      background: #e8ebdc;
+      color: #4e593e;
+      font-size: 11px;
+      line-height: 1.85;
+    }
     .no-results { padding: 30px 0; color: var(--muted); font-size: 13px; }
 
-    /* CONTROL SECTION */
-    .control-section { border-top: 1px solid #d4d8c6; border-bottom: 1px solid #d4d8c6; background: #e8eade; }
+    /* PERMISSIONS */
+    .control-section {
+      border-top: 1px solid #d4d8c6;
+      border-bottom: 1px solid #d4d8c6;
+      background: #e8eade;
+    }
     .control-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .control-card { padding: 28px; border: 1px solid #cdd3be; border-radius: 20px; background: #f3f4eb; }
+    .control-card {
+      padding: 28px;
+      border: 1px solid #cdd3be;
+      border-radius: 20px;
+      background: #f3f4eb;
+    }
     .control-card > span { color: #607143; font: 11px ui-monospace, monospace; }
-    .control-card h3 { margin-top: 24px; font-size: 23px; font-weight: 500; letter-spacing: -.045em; }
-    .control-card p, .control-card li { color: var(--muted); font-size: 12px; line-height: 1.85; }
+    .control-card h3 {
+      margin-top: 24px;
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    .control-card p, .control-card li {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.85;
+    }
     .control-card p { margin-top: 14px; }
     .control-card ul { margin: 16px 0 0; padding-left: 17px; }
     .control-card li + li { margin-top: 5px; }
-    .control-note { max-width: 900px; margin-top: 24px; color: #59634c; font-size: 11px; line-height: 1.8; }
+    .control-note {
+      max-width: 900px;
+      margin-top: 24px;
+      color: #59634c;
+      font-size: 11px;
+      line-height: 1.8;
+    }
 
     /* FAQ */
-    .faq-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 80px;
+      align-items: start;
+    }
     .faq-intro .eyebrow { margin-bottom: 24px; }
-    .faq-intro > p { max-width: 330px; margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .faq-intro > p {
+      max-width: 330px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.85;
+    }
     .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-item summary { display: flex; align-items: center; gap: 25px; padding: 23px 0; list-style: none; font-size: 14px; font-weight: 500; line-height: 1.6; cursor: pointer; }
-    .faq-item p { padding: 0 30px 24px 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
-    .faq-item p a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      padding: 23px 0;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+      cursor: pointer;
+    }
+    .faq-item p {
+      padding: 0 30px 24px 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .faq-item p a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
 
     /* CONTACT */
     .contact-section { border-top: 1px solid var(--line); }
-    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 75px; align-items: start; }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 75px;
+      align-items: start;
+    }
     .contact-copy .eyebrow { margin-bottom: 24px; }
-    .contact-copy > p { max-width: 420px; margin-top: 24px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+    .contact-copy > p {
+      max-width: 420px;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.85;
+    }
     .contact-email {
       display: inline-flex;
       align-items: center;
@@ -754,45 +1290,180 @@
       font-size: clamp(20px, 2.4vw, 32px);
       font-weight: 500;
       letter-spacing: -.045em;
-      transition: color .2s;
     }
     .contact-email:hover { color: #607143; }
     .contact-email span:first-child { overflow-wrap: anywhere; }
-    .contact-note { display: block; margin-top: 15px; color: var(--muted); font-size: 11px; line-height: 1.7; }
-    .contact-panel { padding: 32px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); }
-    .contact-panel-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 18px; }
-    .contact-panel h3 { font-size: 23px; font-weight: 500; letter-spacing: -.045em; }
-    .launch-badge { display: inline-flex; align-items: center; gap: 7px; padding: 8px 11px; border-radius: 100px; background: var(--lime); color: var(--ink); font: 10px/1.4 ui-monospace, monospace; }
-    .launch-badge::before { content: ""; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: currentColor; }
+    .contact-note {
+      display: block;
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+    .contact-panel {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--white);
+    }
+    .contact-panel-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .contact-panel h3 {
+      font-size: 23px;
+      font-weight: 500;
+      letter-spacing: -.045em;
+    }
+    .launch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 11px;
+      border-radius: 100px;
+      background: var(--lime);
+      color: var(--ink);
+      font: 10px/1.4 ui-monospace, monospace;
+    }
+    .launch-badge::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: currentColor;
+    }
     .contact-panel > p { color: var(--muted); font-size: 12px; line-height: 1.85; }
     .social-list { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
-    .social-placeholder { display: flex; align-items: center; gap: 13px; padding: 15px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
-    .social-symbol { display: grid; place-items: center; width: 35px; height: 35px; flex-shrink: 0; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .social-placeholder {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--paper);
+    }
+    .social-symbol {
+      display: grid;
+      place-items: center;
+      width: 35px;
+      height: 35px;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+    }
     .social-name { font-size: 12px; font-weight: 500; }
-    .social-status { margin-left: auto; color: var(--muted); font: 9px/1.5 ui-monospace, monospace; text-align: right; }
+    .social-status {
+      margin-left: auto;
+      color: var(--muted);
+      font: 9px/1.5 ui-monospace, monospace;
+      text-align: right;
+    }
     a.social-placeholder:hover { border-color: #849653; background: #edf1df; }
 
     /* CLOSING & FOOTER */
     .closing { padding-block: 76px 68px; overflow: hidden; background: var(--lime); }
-    .closing-top { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
-    .closing h2 { max-width: 850px; margin-top: 24px; font-size: clamp(48px, 7vw, 98px); line-height: 1.01; font-weight: 500; letter-spacing: -.07em; text-wrap: balance; }
+    .closing-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 35px;
+    }
+    .closing h2 {
+      max-width: 850px;
+      margin-top: 24px;
+      font-size: clamp(48px, 7vw, 98px);
+      line-height: 1.01;
+      font-weight: 500;
+      letter-spacing: -.07em;
+      text-wrap: balance;
+    }
     .closing-arrow { font-size: 130px; line-height: 1; }
-    .closing-bottom { display: flex; align-items: center; justify-content: space-between; gap: 25px; margin-top: 38px; }
-    .closing-bottom p { max-width: 420px; font-size: 13px; line-height: 1.8; }
+    .closing-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin-top: 38px;
+    }
+    .closing-bottom p { max-width: 440px; font-size: 13px; line-height: 1.8; }
     .footer { padding: 65px 0 26px; background: var(--ink); color: var(--paper); }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 45px; }
-    .footer-about > p { max-width: 300px; margin-top: 23px; color: #acb49f; font-size: 12px; line-height: 1.9; }
-    .footer-email { display: inline-block; margin-top: 18px; color: var(--lime); font-size: 12px; overflow-wrap: anywhere; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 45px;
+    }
+    .footer-about > p {
+      max-width: 300px;
+      margin-top: 23px;
+      color: #acb49f;
+      font-size: 12px;
+      line-height: 1.9;
+    }
+    .footer-email {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--lime);
+      font-size: 12px;
+      overflow-wrap: anywhere;
+    }
     .footer-email:hover { text-decoration: underline; text-underline-offset: 4px; }
-    .footer-caption { display: block; margin-top: 22px; color: #afb7a3; font: 9px/1.7 ui-monospace, monospace; letter-spacing: .07em; }
-    .footer-column h3 { margin: 5px 0 22px; color: #f1f3e9; font-size: 11px; font-weight: 500; }
+    .footer-caption {
+      display: block;
+      margin-top: 22px;
+      color: #afb7a3;
+      font: 9px/1.7 ui-monospace, monospace;
+      letter-spacing: .07em;
+    }
+    .footer-column h3 {
+      margin: 5px 0 22px;
+      color: #f1f3e9;
+      font-size: 11px;
+      font-weight: 500;
+    }
     .footer-column ul { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
     .footer-column a { color: #afb7a3; font-size: 11px; line-height: 1.6; }
     .footer-column a:hover { color: var(--lime); }
-    .footer-social-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding: 22px 0; border-top: 1px solid #363d2e; color: #afb7a3; font-size: 10px; line-height: 1.7; }
-    .footer-socials { display: flex; flex-wrap: wrap; gap: 15px 22px; margin: 0; padding: 0; list-style: none; }
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 22px 0;
+      border-top: 1px solid #363d2e;
+      color: #afb7a3;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
     .footer-socials small { margin-left: 5px; color: var(--lime); font-size: 9px; }
-    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-top: 24px; border-top: 1px solid #363d2e; color: #adb59f; font-size: 10px; line-height: 1.8; }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      padding-top: 24px;
+      border-top: 1px solid #363d2e;
+      color: #adb59f;
+      font-size: 10px;
+      line-height: 1.8;
+    }
     .back-top { display: flex; align-items: center; gap: 20px; color: var(--paper); }
 
     /* LAUNCH POPUP */
@@ -813,29 +1484,100 @@
       box-shadow: 0 35px 100px #00000040;
     }
     .launch-modal:not([open]) { display: none; }
-    .launch-modal::backdrop { background: rgba(15, 19, 13, .72); backdrop-filter: blur(9px); }
+    .launch-modal::backdrop {
+      background: rgba(15, 19, 13, .72);
+      backdrop-filter: blur(9px);
+    }
     .launch-modal[open] { animation: launch-enter .35s var(--ease); }
-    .launch-modal-inner { position: relative; padding: 38px; overflow: hidden; }
-    .launch-modal-inner::before { content: ""; position: absolute; top: -115px; right: -105px; width: 300px; height: 300px; border: 1px solid #d2d8c0; border-radius: 50%; pointer-events: none; }
-    .launch-close { position: absolute; top: 17px; right: 17px; z-index: 1; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--line); border-radius: 50%; background: var(--white); color: var(--ink); font-size: 25px; line-height: 1; }
+    .launch-modal-inner { position: relative; padding: 35px; overflow: hidden; }
+    .launch-modal-inner::before {
+      content: "";
+      position: absolute;
+      top: -115px;
+      right: -105px;
+      width: 300px;
+      height: 300px;
+      border: 1px solid #d2d8c0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .launch-close {
+      position: absolute;
+      top: 17px;
+      right: 17px;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--white);
+      font-size: 25px;
+      line-height: 1;
+    }
     .launch-close:hover { background: var(--lime); }
-    .launch-brand { display: inline-flex; align-items: center; gap: 11px; margin-bottom: 25px; }
+    .launch-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 22px;
+    }
     .launch-brand img { width: 44px; height: 44px; border-radius: 12px; background: #000; }
     .launch-brand > span { font-size: 24px; font-weight: 700; letter-spacing: -.06em; }
-    .launch-modal h2 { position: relative; margin-top: 20px; font-size: clamp(43px, 7vw, 59px); font-weight: 500; line-height: 1.02; letter-spacing: -.065em; }
-    .launch-modal h2 span { display: block; color: #747e61; font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; }
-    .launch-message { margin-top: 21px; color: var(--muted); font-size: 13px; line-height: 1.85; }
+    .launch-modal h2 {
+      position: relative;
+      margin-top: 19px;
+      font-size: clamp(43px, 7vw, 58px);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+    .launch-modal h2 span {
+      display: block;
+      color: #747e61;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .launch-message { margin-top: 18px; color: var(--muted); font-size: 13px; line-height: 1.85; }
     .launch-message strong { color: var(--ink); font-weight: 600; }
-    .launch-proof { margin-top: 17px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 13px; color: #586447; background: #e9eddc; font-size: 11px; line-height: 1.8; }
-    .launch-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 23px; }
-    .launch-small { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font: 9px/1.8 ui-monospace, monospace; }
+    .launch-proof {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: #586447;
+      background: #e9eddc;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+    .launch-ai-note {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+    .launch-ai-note strong { color: var(--ink); font-weight: 500; }
+    .launch-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .launch-small {
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 9px/1.8 ui-monospace, monospace;
+    }
     @keyframes launch-enter {
       from { opacity: 0; transform: translateY(18px) scale(.98); }
       to { opacity: 1; transform: none; }
     }
 
-    /* PROGRESSIVE ANIMATION */
-    .motion-ready .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    /* PROGRESSIVE ENHANCEMENT */
+    .motion-ready .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s var(--ease), transform .8s var(--ease);
+    }
     .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
 
     /* TABLET */
@@ -843,7 +1585,6 @@
       .container { width: calc(100% - 64px); }
       .desktop-nav { gap: 15px; }
       .desktop-nav a { font-size: 11px; }
-      .header-inner { gap: 16px; }
       .hero-grid { min-height: 650px; }
       .hero-art { min-height: 580px; }
       .hero h1 { font-size: clamp(75px, 9vw, 110px); }
@@ -856,21 +1597,35 @@
       .module-grid { grid-template-columns: repeat(3, 1fr); }
       .showcase-layout, .wiki-layout, .faq-layout, .contact-layout { gap: 45px; }
       .section { padding-block: 84px; }
-      .story { padding-top: 0; }
+      .story, .guide-section { padding-top: 0; }
       .story-panel { gap: 40px; padding: 38px; }
       .cloud-card { padding: 30px; }
+      .ai-panel { padding: 38px; }
+      .ai-layout { gap: 35px; }
       .footer-grid { gap: 28px; }
     }
+
     @media (max-width: 950px) {
       .header-cta { display: none; }
     }
+
     @media (max-width: 850px) {
       .desktop-nav { display: none; }
       .menu-toggle { display: block; }
       .header-inner { height: 72px; }
-      .mobile-nav { position: fixed; inset: 73px 0 0; z-index: 99; flex-direction: column; align-items: flex-start; gap: 23px; padding: 35px 32px; overflow-y: auto; background: var(--paper); }
+      .mobile-nav {
+        position: fixed;
+        inset: 73px 0 0;
+        z-index: 99;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+        padding: 35px 32px;
+        overflow-y: auto;
+        background: var(--paper);
+      }
       .mobile-nav:not([hidden]) { display: flex; }
-      .mobile-nav a { font-size: 28px; letter-spacing: -.04em; }
+      .mobile-nav a { font-size: 27px; letter-spacing: -.04em; }
       .hero-grid { grid-template-columns: 1fr; gap: 20px; }
       .hero h1 { font-size: clamp(85px, 15vw, 124px); }
       .hero-description { max-width: 490px; }
@@ -885,7 +1640,8 @@
       .intro-small { max-width: none; }
       .hero-bottom > div:nth-child(2) { padding-left: 0; border-left: 0; }
       .hero-bottom > div:not(:first-child) { border-top: 1px solid var(--line); }
-      .cloud-grid, .story-panel { grid-template-columns: 1fr; }
+      .cloud-grid, .story-panel, .ai-layout { grid-template-columns: 1fr; }
+      .ai-privacy { grid-template-columns: 1fr; gap: 15px; }
       .module-grid { grid-template-columns: repeat(2, 1fr); }
       .section-heading > p { width: 245px; font-size: 12px; }
       .showcase-layout, .wiki-layout, .faq-layout, .contact-layout { grid-template-columns: 1fr; }
@@ -909,7 +1665,7 @@
     @media (max-width: 540px) {
       .container { width: calc(100% - 36px); }
       .section { padding-block: 63px; }
-      .story { padding-top: 0; }
+      .story, .guide-section { padding-top: 0; }
       .brand { gap: 9px; }
       .brand-mark { width: 39px; height: 39px; border-radius: 10px; }
       .brand-name { font-size: 24px; }
@@ -923,6 +1679,7 @@
       .hero-buttons { gap: 8px; margin-top: 23px; }
       .button { gap: 16px; min-height: 49px; padding: 14px 17px; font-size: 11px; }
       .hero-footnote { font-size: 9px; }
+      .ai-teaser { font-size: 10px; }
       .hero-art { min-height: 535px; margin-top: 15px; }
       .device { width: 255px; padding: 6px; border-radius: 22px; }
       .device img { border-radius: 16px; }
@@ -976,10 +1733,20 @@
       .workflow-top { display: block; margin-bottom: 30px; }
       .workflow-top > p { margin-top: 13px; }
       .workflow-grid { grid-template-columns: 1fr; gap: 25px; }
-      .workflow-step, .workflow-step:first-child, .workflow-step:last-child { padding: 0 0 25px; border-left: 0; border-bottom: 1px solid var(--line); }
+      .workflow-step, .workflow-step:first-child, .workflow-step:last-child {
+        padding: 0 0 25px;
+        border-left: 0;
+        border-bottom: 1px solid var(--line);
+      }
       .workflow-step:last-child { padding-bottom: 0; border-bottom: 0; }
       .step-number { margin-bottom: 15px; }
       .workflow-step p { font-size: 12px; }
+      .ai-panel { padding: 28px 23px; border-radius: 22px; }
+      .ai-topline { margin-bottom: 26px; }
+      .ai-title { font-size: clamp(36px, 10vw, 46px); }
+      .ai-copy > p { font-size: 12px; }
+      .ai-privacy { padding: 21px; margin-top: 28px; }
+      .ai-status { font-size: 9px; }
       .wiki-layout, .faq-layout, .contact-layout { gap: 29px; }
       .wiki-item summary { gap: 12px; padding-block: 22px; }
       .wiki-item h3 { font-size: 15px; }
@@ -1004,21 +1771,26 @@
       .footer-social-row { align-items: flex-start; flex-direction: column; }
       .launch-modal { border-radius: 22px; }
       .launch-modal-inner { padding: 27px 23px; }
-      .launch-brand { margin-bottom: 22px; }
+      .launch-brand { margin-bottom: 20px; }
       .launch-brand > span { font-size: 22px; }
       .launch-modal h2 { font-size: clamp(38px, 11vw, 52px); }
       .launch-message { font-size: 12px; }
       .launch-actions { flex-direction: column; }
       .launch-actions .button { width: 100%; }
     }
+
     @media (max-width: 360px) {
       .module-grid { grid-template-columns: 1fr; }
       .module-card.featured { grid-column: auto; }
       .module-card { min-height: 220px; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
       .motion-ready .reveal { opacity: 1; transform: none; }
     }
   </style>
@@ -1041,7 +1813,7 @@
         <a href="#platform">Why izybe</a>
         <a href="#journey">Our journey</a>
         <a href="#modules">Modules</a>
-        <a href="#experience">Experience</a>
+        <a class="nav-ai" href="#ai-roadmap">AI roadmap</a>
         <a href="#guide">User guide</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -1050,9 +1822,14 @@
         <a class="button button-dark header-cta" href="#contact">
           Stay in the loop <span class="arrow" aria-hidden="true">↗</span>
         </a>
-        <button class="menu-toggle" type="button"
-          aria-expanded="false" aria-controls="mobile-menu"
-          aria-label="Open menu" hidden>☰</button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Open menu"
+          hidden
+        >☰</button>
       </div>
     </div>
   </header>
@@ -1062,6 +1839,7 @@
     <a href="#journey">Our journey</a>
     <a href="#modules">Modules</a>
     <a href="#experience">Experience</a>
+    <a href="#ai-roadmap">AI roadmap</a>
     <a href="#guide">User guide</a>
     <a href="#faq">FAQs</a>
     <a href="#contact">Contact</a>
@@ -1104,6 +1882,11 @@
             <p class="hero-footnote">
               Two years in development. London demos underway. Launching soon.
             </p>
+
+            <a class="ai-teaser" href="#ai-roadmap">
+              <span>FUTURE UPDATE</span>
+              AI-assisted operations are on our roadmap ↗
+            </a>
           </div>
 
           <div class="hero-art">
@@ -1114,9 +1897,13 @@
               <div class="device-top" aria-hidden="true">
                 <span>IZYBE.APP / CLOUD WORKSPACE</span><i></i>
               </div>
-              <img src="images/dashboard.png"
-                alt="izybe.app hospitality dashboard with active checklists, staff and task calendar"
-                width="679" height="998" fetchpriority="high">
+              <img
+                src="images/dashboard.png"
+                alt="izybe.app hospitality dashboard with active checklists, staff and a task calendar"
+                width="679"
+                height="998"
+                fetchpriority="high"
+              >
               <figcaption class="sr-only">
                 The application dashboard brings hospitality operations together.
               </figcaption>
@@ -1142,9 +1929,7 @@
 
         <div class="hero-bottom">
           <div>
-            <p class="intro-small">
-              Built around the pace<br>of hospitality.
-            </p>
+            <p class="intro-small">Built around the pace<br>of hospitality.</p>
           </div>
           <div>
             <strong>2 years</strong>
@@ -1162,21 +1947,20 @@
       </div>
     </section>
 
-    <!-- CLOUD & CROSS-PLATFORM -->
+    <!-- CLOUD & CROSS-PLATFORM ACCESS -->
     <section class="section" id="platform" aria-labelledby="platform-title">
       <div class="container">
         <div class="section-heading reveal">
           <div>
             <p class="eyebrow">01 / Built for hospitality</p>
             <h2 class="section-title" id="platform-title">
-              Your operation.<br>
-              Beyond one device.
+              Your operation.<br>Beyond one device.
             </h2>
           </div>
           <p>
             Software as a Service, built around restaurant and hotel teams.
             Access your cloud workspace through a compatible browser
-            and work with your team in real time.
+            and work together in real time.
           </p>
         </div>
 
@@ -1185,11 +1969,11 @@
             <h3>Open a browser.<br>Get to work.</h3>
             <p>
               Use izybe.app on iOS, Android, Windows, Linux and macOS.
-              Move between a phone, tablet and computer without being
-              tied to a single operating system or a native-only application.
+              Move between a phone, tablet and computer without
+              being tied to one operating system or a native-only app.
             </p>
 
-            <ul class="platform-list" aria-label="Supported operating systems through a compatible browser">
+            <ul class="platform-list" aria-label="Operating systems supported through a compatible browser">
               <li>iOS</li>
               <li>Android</li>
               <li>Windows</li>
@@ -1198,9 +1982,9 @@
             </ul>
 
             <small class="browser-note">
-              Browser-based access requires an internet connection and a
-              compatible modern browser. Camera-based features also depend
-              on device support and browser permissions.
+              An internet connection and a compatible modern browser
+              are required. Camera features depend on device support
+              and browser permissions.
             </small>
           </article>
 
@@ -1208,9 +1992,9 @@
             <span class="cloud-label">CLOUD-BASED SAAS / REAL-TIME WORKFLOWS</span>
             <h3>A shared view.<br>As work happens.</h3>
             <p>
-              Keep your operational work in a cloud-based system rather
-              than on one local device. Connected team members can work
-              with up-to-date information as operations move forward.
+              Keep operational work in a cloud-based system rather
+              than on one local device. Connected team members can
+              work with updated information as operations move forward.
             </p>
             <ul class="cloud-points">
               <li>Real-time operational updates while connected.</li>
@@ -1226,33 +2010,29 @@
             <h3>From opening checks to the final shift.</h3>
             <p>
               Bring daily checklists, staff attendance, stock requests,
-              allergen information and damage records into the same
-              operational flow.
+              allergen information and damage records into the same flow.
             </p>
           </article>
-
           <article class="audience-card reveal">
             <span>FOR HOTELS</span>
             <h3>Keep departments working together.</h3>
             <p>
-              Coordinate staff schedules, department tasks, internal stock
-              movements and team communication across your hotel's
-              operational teams.
+              Coordinate staff schedules, department tasks, internal
+              stock movements and communication across operational teams.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- DEVELOPMENT & LONDON DEMOS -->
+    <!-- DEVELOPMENT JOURNEY -->
     <section class="section story" id="journey" aria-labelledby="journey-title">
       <div class="container">
         <div class="story-panel reveal">
           <div class="story-copy">
             <p class="eyebrow">02 / The journey so far</p>
             <h2 id="journey-title">
-              Two years of work.<br>
-              A real-world beginning.
+              Two years of work.<br>A real-world beginning.
             </h2>
             <p>
               izybe.app has been in development for two years.
@@ -1260,9 +2040,9 @@
               at selected large restaurants in London.
             </p>
             <p>
-              This is the next stage of the journey: moving from
-              development and restaurant demos towards a commercial
-              launch for restaurant and hotel operators.
+              We are moving towards commercial availability for
+              restaurant and hotel operators, while exploring
+              future improvements including AI-assisted workflows.
             </p>
             <a class="button button-dark" href="#contact">
               Ask about the launch
@@ -1270,13 +2050,13 @@
             </a>
           </div>
 
-          <ol class="timeline" aria-label="Product development stages">
+          <ol class="timeline" aria-label="Product journey">
             <li>
               <small>THE FOUNDATION</small>
               <h3>Two years in development.</h3>
               <p>
-                Building a connected hospitality system covering staff,
-                checklists, stock, shifts and operational records.
+                Building connected tools for staff, checklists,
+                stock, shifts and operational records.
               </p>
             </li>
             <li>
@@ -1291,8 +2071,17 @@
               <small>WHAT COMES NEXT</small>
               <h3>Commercial launch. Coming soon.</h3>
               <p>
-                The application will be available for purchase soon.
-                Launch timing and commercial details will be announced here.
+                Purchase availability, launch timing and commercial
+                details will be announced here.
+              </p>
+            </li>
+            <li>
+              <small>FUTURE EXPLORATION</small>
+              <h3>AI assistance on the roadmap.</h3>
+              <p>
+                Manager-like workflow support and possible local AI
+                processing are under exploration.
+                <a href="#ai-roadmap">Read the roadmap</a>.
               </p>
             </li>
           </ol>
@@ -1305,15 +2094,15 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">03 / The platform modules</p>
+            <p class="eyebrow">03 / Platform modules</p>
             <h2 class="section-title" id="modules-title">
               Different tasks.<br>One shared rhythm.
             </h2>
           </div>
           <p>
-            From the opening checklist to the final shift.
             Eleven complementary modules for the people, products
-            and processes behind hospitality.
+            and processes behind hospitality. Future AI assistance
+            is a separate roadmap initiative.
           </p>
         </div>
 
@@ -1436,7 +2225,7 @@
       </div>
     </section>
 
-    <!-- SCREEN EXPLORER -->
+    <!-- PRODUCT SCREENS -->
     <section class="section showcase" id="experience" aria-labelledby="experience-title">
       <div class="container showcase-layout">
         <div class="showcase-copy reveal">
@@ -1446,12 +2235,16 @@
           </h2>
           <p>
             Color-coded statuses, visible priorities and dedicated module
-            screens. A closer look at the operational tools behind
-            your browser-based workspace.
+            screens. Explore the operational tools behind your workspace.
           </p>
 
-          <div class="screen-tabs" id="screen-tabs" role="group"
-            aria-label="Choose an application screenshot" hidden>
+          <div
+            class="screen-tabs"
+            id="screen-tabs"
+            role="group"
+            aria-label="Choose an application screenshot"
+            hidden
+          >
             <button class="screen-tab" type="button" data-screen="0" aria-pressed="true" aria-controls="screen-image">Lists</button>
             <button class="screen-tab" type="button" data-screen="1" aria-pressed="false" aria-controls="screen-image">Checklist</button>
             <button class="screen-tab" type="button" data-screen="2" aria-pressed="false" aria-controls="screen-image">Stock</button>
@@ -1473,14 +2266,22 @@
           <span class="stage-label">DESIGNED FOR THE EVERYDAY</span>
           <span class="stage-plus" aria-hidden="true">+</span>
           <div class="screen-image-shell">
-            <img id="screen-image" src="images/lists.png"
+            <img
+              id="screen-image"
+              src="images/lists.png"
               alt="izybe.app active lists screen with categories and completion statistics"
-              width="749" height="1117" loading="lazy" decoding="async">
+              width="749"
+              height="1117"
+              loading="lazy"
+              decoding="async"
+            >
             <p class="image-fallback" id="screen-fallback" hidden>
               Screenshot unavailable. Please check the image file.
             </p>
           </div>
-          <figcaption class="screen-caption">SCREENSHOT FROM THE APPLICATION</figcaption>
+          <figcaption class="screen-caption">
+            SCREENSHOT FROM THE APPLICATION
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -1497,43 +2298,143 @@
           <article class="workflow-step reveal">
             <span class="step-number">01 / PLAN</span>
             <h3>Prepare the day.</h3>
-            <p>Create reusable checklists, publish weekly shifts and assign calendar tasks to the relevant departments and staff.</p>
+            <p>Create reusable checklists, publish shifts and assign tasks to the relevant departments and staff.</p>
           </article>
           <article class="workflow-step reveal">
             <span class="step-number">02 / OPERATE</span>
             <h3>Follow the flow.</h3>
-            <p>Record attendance, complete checks, manage stock movements and keep your connected team informed as work happens.</p>
+            <p>Record attendance, complete checks, manage stock and keep your connected team informed as work happens.</p>
           </article>
           <article class="workflow-step reveal">
             <span class="step-number">03 / REVIEW</span>
             <h3>See the whole picture.</h3>
-            <p>Review completed lists, working hours, stock history and damage reports before planning the next working day.</p>
+            <p>Review completed lists, working hours, stock history and damage reports before planning the next day.</p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- AI ROADMAP: NOT AN AVAILABLE FEATURE -->
+    <section class="section" id="ai-roadmap" aria-labelledby="ai-title">
+      <div class="container">
+        <div class="ai-panel reveal">
+          <div class="ai-topline">
+            <p class="eyebrow">06 / Looking ahead</p>
+            <span class="ai-status">AI roadmap · Not yet available</span>
+          </div>
+
+          <div class="ai-layout">
+            <div class="ai-copy">
+              <h2 class="ai-title" id="ai-title">
+                Another set of eyes.<br>
+                <span>On your operation.</span>
+              </h2>
+
+              <p>
+                We are working towards AI assistance for future
+                izybe.app updates: an operational assistant designed
+                to help oversee your workflow, much like an extra
+                manager alongside your team.
+              </p>
+
+              <p>
+                Our team is giving particular attention to this
+                direction — exploring how AI could identify work
+                that needs attention, clarify priorities and help
+                teams follow through on daily responsibilities.
+              </p>
+
+              <p>
+                The ambition is a smoother, more consistent operation
+                with fewer overlooked tasks. AI would support people,
+                not replace managerial judgement or guarantee
+                error-free results.
+              </p>
+            </div>
+
+            <ul class="ai-feature-list" aria-label="Potential AI capabilities being explored">
+              <li>
+                <h3>Workflow oversight</h3>
+                <p>
+                  Potential tools could review operational activity,
+                  highlight incomplete work and bring possible
+                  issues to the team's attention.
+                </p>
+              </li>
+              <li>
+                <h3>Manager-like guidance</h3>
+                <p>
+                  The proposed assistant could help organise
+                  priorities and suggest next steps, with staff
+                  and managers remaining in control.
+                </p>
+              </li>
+              <li>
+                <h3>A clearer daily picture</h3>
+                <p>
+                  We are exploring operational summaries and
+                  useful prompts to help teams understand what
+                  has been done and what still needs attention.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="ai-privacy">
+            <h3>Local AI?<br>We're exploring it.</h3>
+            <div>
+              <p>
+                One approach under consideration is local or offline
+                AI processing, intended to reduce the need to send
+                sensitive company information to external AI services.
+                We want careful control over where operational data
+                is processed.
+              </p>
+              <p>
+                This is a design direction, not a final architecture.
+                Cloud AI security depends on the provider,
+                configuration and data-handling arrangements; local
+                processing also requires appropriate safeguards.
+                Neither approach is automatically risk-free.
+              </p>
+            </div>
+          </div>
+
+          <p class="ai-disclaimer">
+            <strong>Future plans, not a current product capability.</strong>
+            AI assistance has not been released, and no release date
+            is confirmed. Features, timing and implementation may
+            change as research and testing continue. We may choose
+            a local, cloud, hybrid or different approach, or defer
+            parts of the plan. A possible offline AI component does
+            not mean the current cloud platform works offline.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- USER GUIDE -->
-    <section class="section" id="guide" aria-labelledby="guide-title">
+    <section class="section guide-section" id="guide" aria-labelledby="guide-title">
       <div class="container wiki-layout">
         <div class="wiki-intro reveal">
-          <p class="eyebrow">06 / Knowledge hub</p>
+          <p class="eyebrow">07 / Knowledge hub</p>
           <h2 class="section-title" id="guide-title">
             Know the tools.<br><span class="muted">Own the day.</span>
           </h2>
           <p>
-            A practical introduction to each module: what it does,
-            how to start and which actions need extra attention.
+            Practical guidance for the eleven operational modules:
+            what they do, how to start and which actions need care.
           </p>
           <p>
-            Understand templates, attendance, stock movements,
-            reporting and administrative controls.
+            AI is a separate future roadmap initiative and is not
+            part of the workflows described below.
           </p>
           <span class="wiki-label">11 MODULES / PRACTICAL USER GUIDE</span>
+
           <nav class="guide-index" aria-label="Popular guide topics">
-            <a href="#guide-lists">Creating your first checklist ↗</a>
-            <a href="#guide-staff">Managing staff attendance ↗</a>
-            <a href="#guide-stock">Understanding stock reservations ↗</a>
+            <a href="#guide-lists">Create your first checklist ↗</a>
+            <a href="#guide-staff">Manage staff attendance ↗</a>
+            <a href="#guide-stock">Understand stock reservations ↗</a>
             <a href="#guide-settings">Permissions and backups ↗</a>
           </nav>
         </div>
@@ -1542,84 +2443,103 @@
           <label class="search" id="guide-search-control" hidden>
             <span aria-hidden="true">⌕</span>
             <span class="sr-only">Search the user guide</span>
-            <input id="guide-search" type="search"
-              placeholder="Search modules, actions or features..." autocomplete="off">
+            <input
+              id="guide-search"
+              type="search"
+              placeholder="Search modules, actions or features..."
+              autocomplete="off"
+            >
             <span class="search-count" id="search-count" role="status">11 / 11</span>
           </label>
 
           <div id="guide-list">
             <details class="wiki-item" id="guide-lists" open>
-              <summary><span class="wiki-index">01</span><h3>Lists & checklist templates</h3></summary>
+              <summary>
+                <span class="wiki-index">01</span>
+                <h3>Lists & checklist templates</h3>
+              </summary>
               <div class="wiki-body">
-                <p>Create reusable Checklist or To-Do templates, start active lists from them and retain completed records in history.</p>
+                <p>Create reusable Checklist or To-Do templates, start active copies and retain completed records in history.</p>
                 <h4>Create and use a template</h4>
                 <ol>
-                  <li>Open Add Lists and choose a Checklist or To-Do template. Enter a title, category and frequency: daily, morning, evening or custom. Custom schedules include a date and time.</li>
+                  <li>Open Add Lists and choose a template type. Enter a title, category and daily, morning, evening or custom frequency. Custom schedules include a date and time.</li>
                   <li>Add items with low, medium or high priorities. Include temperature, weight, quantity or volume fields where needed.</li>
-                  <li>Use Add Tracked Items to link stock products. Review the summary and save the template.</li>
+                  <li>Use Add Tracked Items to link stock products. Review the summary and save.</li>
                   <li>Choose Start List to create an active copy. Complete items, enter measurements and finish the list.</li>
                 </ol>
                 <h4>Find and review work</h4>
-                <p>Search and filter by category, date, frequency and list type. Active lists are paginated with ten per page. Completed Lists provides archived details and completion records.</p>
-                <aside class="wiki-warning">Editing or deleting a template does not change existing active lists. Quantities entered in stock-linked items are reflected in stock when the list is completed.</aside>
+                <p>Search and filter by category, date, frequency and list type. Active lists show ten results per page. Completed Lists contains archived details and completion records.</p>
+                <aside class="wiki-warning">Editing or deleting a template does not change existing active lists. Stock-linked quantities are reflected in inventory when the list is completed.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-staff">
-              <summary><span class="wiki-index">02</span><h3>Staff management & working hours</h3></summary>
+              <summary>
+                <span class="wiki-index">02</span>
+                <h3>Staff management & working hours</h3>
+              </summary>
               <div class="wiki-body">
-                <p>Manage employee records, clock-in and clock-out events, breaks, active staff and working-hours reports. Authentication can use a PIN or configured face recognition.</p>
+                <p>Manage employee records, attendance, breaks and working-hours reports. Authentication can use a PIN or configured face recognition.</p>
                 <h4>Add and manage staff</h4>
                 <ol>
                   <li>Log in to Staff Management and press Add Staff. Enter first name, last name and a unique staff number.</li>
-                  <li>Choose full-time, part-time or agency status, then select position and department. Agency staff require an agency.</li>
+                  <li>Choose full-time, part-time or agency status, position and department. Agency staff require an agency.</li>
                   <li>Set a four-digit PIN and optionally add a photo for face recognition.</li>
                   <li>Search by name or number, or filter by category, position, department and agency.</li>
                 </ol>
                 <h4>Attendance and reporting</h4>
-                <p>In Time to Start Work, enter a staff number and verify identity. Start work, manage a break or clock out according to current status. Active Staff List shows current workers. Clock Report provides date-filtered attendance, break and net working-time records.</p>
-                <aside class="wiki-warning">Editing requires admin access or editStaff permission. Deleting staff makes the record inactive; historical working records are preserved.</aside>
+                <p>Enter a staff number and verify identity in Time to Start Work. Start work, take a break or clock out according to current status. Active Staff List shows current workers; Clock Report provides attendance, break and net working-time records.</p>
+                <aside class="wiki-warning">Editing requires admin access or editStaff permission. Deleting staff makes the record inactive while preserving working history.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-main-stock">
-              <summary><span class="wiki-index">03</span><h3>Main Stock & warehouse organization</h3></summary>
+              <summary>
+                <span class="wiki-index">03</span>
+                <h3>Main Stock & warehouse organization</h3>
+              </summary>
               <div class="wiki-body">
-                <p>Organize the warehouse through shelves, sub-shelves and products. Breadcrumb navigation identifies the current location in the hierarchy.</p>
+                <p>Organize the warehouse through shelves, sub-shelves and products, with breadcrumb navigation showing the current position.</p>
                 <h4>Build your warehouse</h4>
                 <ol>
-                  <li>Add a shelf with its name and optional color or icon. Shelves created inside another shelf become sub-shelves.</li>
-                  <li>Open a shelf and add products with name, quantity, minimum quantity and unit.</li>
+                  <li>Add a shelf with its name and optional color or icon. A shelf created inside another becomes a sub-shelf.</li>
+                  <li>Add products with name, quantity, minimum quantity and unit.</li>
                   <li>Optionally add barcode, product code, category, location description and catalog image.</li>
                   <li>Use Bulk Add to enter several products through a table-style interface.</li>
                 </ol>
                 <h4>Search and export</h4>
-                <p>Search across shelf levels using product names, barcodes, product codes or locations. Barcode scanning can start a search. Filter sufficient, low and out-of-stock products and export the current shelves and items to PDF.</p>
+                <p>Search across shelf levels by name, barcode, product code or location. Use barcode scanning, filter by stock status and export current shelves and items to PDF.</p>
                 <aside class="wiki-warning">Deleting a shelf permanently deletes its sub-shelves and products. Review the contents before confirming.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-stock">
-              <summary><span class="wiki-index">04</span><h3>Operational stock, reservations & transfers</h3></summary>
+              <summary>
+                <span class="wiki-index">04</span>
+                <h3>Stock, reservations & transfers</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Manage daily inventory by location. A cart groups products for transactions and temporarily reserves selected quantities.</p>
                 <h4>Complete a transaction</h4>
                 <ol>
                   <li>Open a location and add products with name, quantity, minimum quantity, unit and optional barcode or category.</li>
-                  <li>Use the plus button beside products to add quantities to the cart and reserve them.</li>
+                  <li>Add quantities to the cart using the plus button beside products.</li>
                   <li>Choose Purchase to increase stock or Transfer to move products to another location.</li>
                   <li>Enter supplier, price or destination information as required and complete the transaction.</li>
                 </ol>
                 <h4>Review movements</h4>
-                <p>The statistics menu provides purchase history, transfer history, low-stock alerts and bulk-add history. Product search operates within the current location.</p>
-                <aside class="wiki-warning">A warning appears after three minutes of inactivity. Reservations are automatically released after five minutes unless activity resumes.</aside>
+                <p>The statistics menu provides purchase, transfer and bulk-add history, plus low-stock alerts. Product search operates within the current location.</p>
+                <aside class="wiki-warning">A warning appears after three minutes of inactivity. Reservations are released after five minutes unless activity resumes.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-market">
-              <summary><span class="wiki-index">05</span><h3>Market & internal stock orders</h3></summary>
+              <summary>
+                <span class="wiki-index">05</span>
+                <h3>Market & internal stock orders</h3>
+              </summary>
               <div class="wiki-body">
-                <p>Staff request products from Main Stock and Stock. Managers review orders and move them through the ordering workflow.</p>
+                <p>Staff request products from Main Stock and Stock. Managers review and process those orders.</p>
                 <h4>Create and process an order</h4>
                 <ol>
                   <li>Select New Order, requesting staff, destination and stock source.</li>
@@ -1628,30 +2548,36 @@
                   <li>Open order details and choose Process, Complete or Cancel.</li>
                 </ol>
                 <h4>Find orders</h4>
-                <p>Search by staff, destination or product, and filter by date and pending, processing, completed or cancelled status.</p>
+                <p>Search by staff, destination or product. Filter by date and pending, processing, completed or cancelled status.</p>
                 <aside class="wiki-warning">Pending and processing orders remain visible regardless of the date filter. Orders are cancelled rather than directly deleted.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-shifts">
-              <summary><span class="wiki-index">06</span><h3>Weekly shift planning</h3></summary>
+              <summary>
+                <span class="wiki-index">06</span>
+                <h3>Weekly shift planning</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Create category-based weekly plans, organize staff into sub-groups and publish daily assignments.</p>
                 <h4>Plan the week</h4>
                 <ol>
-                  <li>Log in to Shift Planner and create a plan with a title and category.</li>
-                  <li>Select a Monday start date. The Sunday end date is calculated automatically.</li>
+                  <li>Log in to Shift Planner and create a plan with title and category.</li>
+                  <li>Select a Monday start date. Sunday is calculated as the end date.</li>
                   <li>Add staff, daily start and end times, and shift types.</li>
                   <li>Publish the plan. Update assignments in edit mode and publish changes.</li>
                 </ol>
                 <h4>View schedules</h4>
-                <p>Search published plans by name, category or date. Details show a Monday-to-Sunday calendar. Staff Shift Plan lets employees view their own schedule using their staff number.</p>
+                <p>Search plans by name, category or date. Details show a weekly calendar. Staff Shift Plan lets employees view their schedule using their staff number.</p>
                 <aside class="wiki-warning">The shift plan list requires staff login. Deleting a plan is permanent.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-messages">
-              <summary><span class="wiki-index">07</span><h3>Team messaging, broadcasts & polls</h3></summary>
+              <summary>
+                <span class="wiki-index">07</span>
+                <h3>Messaging, broadcasts & polls</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Supabase Realtime supports direct conversations, polls, broadcasts, unread counts and typing indicators.</p>
                 <h4>Communicate with the team</h4>
@@ -1659,7 +2585,7 @@
                   <li>Press New Conversation, find a company user and open the chat.</li>
                   <li>Write a message and press Send or Enter. Conversations are ordered by the latest message.</li>
                   <li>Create a poll with a question and at least two options. Multiple-choice voting is optional.</li>
-                  <li>Use broadcasts for announcements and edit your display name, avatar and color through the profile control.</li>
+                  <li>Use broadcasts for announcements and edit your name, avatar and color through the profile control.</li>
                 </ol>
                 <h4>Poll results</h4>
                 <p>View vote counts, percentages and the voters who selected each option. Unread counts update as messages arrive.</p>
@@ -1668,7 +2594,10 @@
             </details>
 
             <details class="wiki-item" id="guide-allergens">
-              <summary><span class="wiki-index">08</span><h3>Allergen & ingredient information</h3></summary>
+              <summary>
+                <span class="wiki-index">08</span>
+                <h3>Allergen & ingredient information</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Maintain food and drink records with allergens, ingredients, categories and departments.</p>
                 <h4>Maintain food records</h4>
@@ -1679,54 +2608,63 @@
                   <li>Open cards for details or use edit mode to update and delete records.</li>
                 </ol>
                 <h4>Filter and export</h4>
-                <p>Search by name, filter by category or department, and exclude specified allergens or ingredients. Export the current filtered list as PDF.</p>
-                <aside class="wiki-warning">The business must check that records are accurate and current. Filtering recorded information does not guarantee that a dish is safe for a particular allergy or free from cross-contact.</aside>
+                <p>Search by name, filter by category or department and exclude specified allergens or ingredients. Export the current filtered list as PDF.</p>
+                <aside class="wiki-warning">The business must verify that records are accurate and current. Filtering recorded information does not guarantee that a dish is safe for an allergy or free from cross-contact.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-damage">
-              <summary><span class="wiki-index">09</span><h3>Damage tracking & operational reports</h3></summary>
+              <summary>
+                <span class="wiki-index">09</span>
+                <h3>Damage tracking & reports</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Track stock products for damage, record quantities and review time-based and product-based statistics.</p>
                 <h4>Track damage</h4>
                 <ol>
-                  <li>Press Add to Tracking in Damage Reports and complete staff login.</li>
+                  <li>Press Add to Tracking and complete staff login.</li>
                   <li>Select the stock product and damage type.</li>
                   <li>Open the tracked product, select Add Damage, enter the quantity and save.</li>
                   <li>Filter by product, damage type and time range. Choose grid or list view.</li>
                 </ol>
                 <h4>Analyze and export</h4>
-                <p>Review total damage, today's damage, needed quantities and today's report count. Export trends and product-based reporting as Excel, PDF or TXT.</p>
+                <p>Review total damage, today's damage, needed quantities and report counts. Export reporting as Excel, PDF or TXT.</p>
                 <aside class="wiki-warning">Adding tracked products and editing require staff login. Removing a product from tracking preserves its damage history.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-todo">
-              <summary><span class="wiki-index">10</span><h3>Calendar tasks & completion history</h3></summary>
+              <summary>
+                <span class="wiki-index">10</span>
+                <h3>Calendar tasks & history</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Unlike reusable templates, these task lists belong to specific dates and can be assigned to departments and multiple staff members.</p>
                 <h4>Plan and complete tasks</h4>
                 <ol>
-                  <li>Select a day in Todo Calendar and create a new task list.</li>
-                  <li>Enter a title, optional department and staff assignments, then add task items.</li>
-                  <li>Save to the chosen date. Task days are marked on the monthly calendar.</li>
+                  <li>Select a day in Todo Calendar and create a task list.</li>
+                  <li>Enter a title, optional department and staff assignments, then add items.</li>
+                  <li>Save to the chosen date. Task days are marked on the calendar.</li>
                   <li>Complete items in list details. Finished lists move to history.</li>
                 </ol>
                 <h4>Filter and review</h4>
                 <p>Combine department and staff filters. Inspect completed lists through History and edit existing lists through their card controls.</p>
-                <aside class="wiki-warning">Completing a list preserves it in history. Deleting a list is a separate, permanent action.</aside>
+                <aside class="wiki-warning">Completing a list preserves it in history. Deleting it is a separate, permanent action.</aside>
               </div>
             </details>
 
             <details class="wiki-item" id="guide-settings">
-              <summary><span class="wiki-index">11</span><h3>Settings, administration & backups</h3></summary>
+              <summary>
+                <span class="wiki-index">11</span>
+                <h3>Administration, settings & backups</h3>
+              </summary>
               <div class="wiki-body">
                 <p>Separate everyday preferences from administrative configuration. Admin Panel access requires administrative credentials.</p>
                 <h4>User preferences</h4>
                 <ul>
                   <li>Update profile and appearance.</li>
                   <li>Configure checklist schedules and daily reset behavior.</li>
-                  <li>Adjust sounds, message notifications and low-stock alerts.</li>
+                  <li>Adjust sounds, message notifications and stock alerts.</li>
                   <li>Search activity logs and filter by activity type.</li>
                 </ul>
                 <h4>Administrative controls</h4>
@@ -1737,7 +2675,7 @@
                   <li>Set PIN protection, admin credentials, PIN or face authentication and optional liveness detection.</li>
                 </ol>
                 <h4>Backup and restore</h4>
-                <p>Export application data as JSON, import a previous backup and configure available automatic backup settings. Review previous records in backup history.</p>
+                <p>Export data as JSON, import a previous backup and configure available automatic backup settings. Review previous records in backup history.</p>
                 <aside class="wiki-warning">Restoring overwrites current data and cannot be undone. With Settings PIN protection enabled, leaving that screen locks it again.</aside>
               </div>
             </details>
@@ -1755,43 +2693,46 @@
       <div class="container">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">07 / Permissions & data</p>
+            <p class="eyebrow">08 / Permissions & data</p>
             <h2 class="section-title" id="controls-title">
               Clear access.<br>Considered actions.
             </h2>
           </div>
-          <p>Know who can make changes, which records remain available and which actions deserve a second look.</p>
+          <p>
+            Know who can make changes, which records remain available
+            and which actions deserve a second look.
+          </p>
         </div>
 
         <div class="control-grid">
           <article class="control-card reveal">
             <span>01 / ACCESS</span>
             <h3>Give each role the right tools.</h3>
-            <p>Administrative controls separate viewing, module access and editing permissions.</p>
+            <p>Controls separate viewing, module access and editing permissions.</p>
             <ul>
               <li>Category visibility and module access.</li>
               <li>Staff editing permissions.</li>
               <li>Settings PIN protection.</li>
-              <li>Supported staff authentication methods.</li>
+              <li>Supported authentication methods.</li>
             </ul>
           </article>
           <article class="control-card reveal">
             <span>02 / HISTORY</span>
             <h3>Keep the working record.</h3>
-            <p>Review the records created by everyday work, not just the current screen.</p>
+            <p>Review records created by daily work, not just the current screen.</p>
             <ul>
               <li>Completed checklists and calendar tasks.</li>
               <li>Attendance and working-hours records.</li>
               <li>Purchase and transfer history.</li>
-              <li>Damage reports and system activity logs.</li>
+              <li>Damage reports and activity logs.</li>
             </ul>
           </article>
           <article class="control-card reveal">
             <span>03 / EXPORTS</span>
-            <h3>Take the right information with you.</h3>
+            <h3>Take useful information with you.</h3>
             <p>Modules provide exports suited to their operational records.</p>
             <ul>
-              <li>Main Stock and allergen lists: PDF.</li>
+              <li>Main Stock and allergens: PDF.</li>
               <li>Damage statistics: Excel, PDF and TXT.</li>
               <li>Application backups: JSON.</li>
               <li>Restore controls in the Admin Panel.</li>
@@ -1800,9 +2741,9 @@
         </div>
 
         <p class="control-note">
-          Permissions and backup settings support operational administration;
-          they are not a statement of regulatory certification.
-          Configure access appropriately and review destructive actions before confirming them.
+          These controls support operational administration, not a claim
+          of regulatory certification. Configure access appropriately
+          and review destructive actions before confirming.
         </p>
       </div>
     </section>
@@ -1811,80 +2752,175 @@
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container faq-layout">
         <div class="faq-intro reveal">
-          <p class="eyebrow">08 / Frequently asked questions</p>
+          <p class="eyebrow">09 / Frequently asked questions</p>
           <h2 class="section-title" id="faq-title">
             A little clarity.<br><span class="muted">Before you begin.</span>
           </h2>
           <p>
-            Learn about the cloud platform, device access, current demo
-            stage and the workflows available to hospitality teams.
+            Learn about cloud access, the London demo stage and the
+            difference between today's platform and future AI plans.
           </p>
         </div>
 
         <div>
           <details class="faq-item">
             <summary>What is izybe.app?</summary>
-            <p>izybe.app is a cloud-based Software as a Service platform for restaurant and hotel operations. It brings staff, checklists, stock, shifts, internal orders, messaging and operational records together in a browser-based workspace.</p>
+            <p>
+              izybe.app is a cloud-based SaaS platform for restaurant
+              and hotel operations. It brings staff, checklists, stock,
+              shifts, internal orders, messaging and operational
+              records into one browser-based workspace.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Does it work on iOS, Android, Windows, Linux and macOS?</summary>
-            <p>Yes, through a compatible modern web browser and an internet connection. You can access the platform from supported phones, tablets and computers. Camera features depend on device capabilities and browser permissions; this is browser access, not a claim of separate native apps for every operating system.</p>
+            <p>
+              Yes, through a compatible modern browser and an internet
+              connection. Supported phones, tablets and computers can
+              access the platform. Camera features depend on device
+              capabilities and permissions. This is browser access,
+              not a claim of separate native apps for every system.
+            </p>
           </details>
 
           <details class="faq-item">
-            <summary>Is the platform cloud-based and real-time?</summary>
-            <p>Yes. izybe.app is a cloud-based SaaS system with real-time operational workflows. Connected users can work with updated operational information across supported devices. An internet connection is needed for cloud access and real-time updates.</p>
+            <summary>Is the system cloud-based and real-time?</summary>
+            <p>
+              Yes. The platform supports real-time operational
+              workflows while connected. An internet connection
+              is required for cloud access and real-time updates.
+            </p>
           </details>
 
           <details class="faq-item">
-            <summary>Who is it designed for?</summary>
-            <p>The platform is designed for restaurant and hotel operators who need to coordinate staff, daily checks, departmental tasks, inventory, internal requests and operational reporting. The focus is the teams and processes behind day-to-day hospitality operations.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How long has izybe.app been in development?</summary>
-            <p>izybe.app has been in development for two years. Work has focused on bringing hospitality workflows into a connected system, from staff and lists to stock, shifts and reporting.</p>
+            <summary>How long has the application been in development?</summary>
+            <p>
+              izybe.app has been in development for two years,
+              bringing hospitality workflows into a connected
+              system covering staff, tasks, stock and reporting.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Is it already being used in London?</summary>
-            <p>The application is currently being used and tested in demo form at selected large restaurants in London. These are demo deployments and trials ahead of the commercial launch.</p>
+            <p>
+              The application is currently being used and tested in
+              demo form at selected large restaurants in London.
+              These are demo deployments and trials ahead of the
+              commercial launch.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>When will it be available for purchase?</summary>
-            <p>Commercial availability is coming soon. A launch date and pricing have not yet been announced on this website. Check back for updates or contact <a href="mailto:izybe.app@gmail.com">izybe.app@gmail.com</a> with launch enquiries.</p>
+            <p>
+              Commercial availability is coming soon. A launch date
+              and pricing have not yet been announced here.
+              Contact <a href="mailto:izybe.app@gmail.com">izybe.app@gmail.com</a>
+              with product or launch enquiries.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does izybe.app have AI assistance today?</summary>
+            <p>
+              No. AI assistance is a future roadmap initiative, not
+              an available feature. The team is actively exploring
+              its design and possible integration for later updates.
+              No release date is confirmed.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What could the planned AI assistant do?</summary>
+            <p>
+              The goal is manager-like support for daily workflows:
+              helping highlight incomplete work, clarify priorities,
+              summarise activity and suggest next steps. These are
+              proposed capabilities, not final specifications.
+              Staff and managers would remain responsible for decisions.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Why are you considering local or offline AI?</summary>
+            <p>
+              We want to minimise unnecessary transfer of sensitive
+              company information to external AI services and retain
+              control over data processing. Local or offline inference
+              is one option under consideration. It is not yet implemented
+              or selected as the final approach, and local processing
+              would still need appropriate security controls.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Could the AI integration plan change?</summary>
+            <p>
+              Yes. Research, testing, hardware requirements and
+              operational needs may lead to local, cloud, hybrid or
+              another implementation. Features and timing may change,
+              and parts of the plan may be deferred. Roadmap descriptions
+              are not a commitment to a specific release.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Would offline AI make the whole application work offline?</summary>
+            <p>
+              Not necessarily. A local AI component and an offline
+              application are different capabilities. The current
+              cloud platform requires internet access; exploring
+              local AI does not change that requirement.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Will AI make every workflow flawless?</summary>
+            <p>
+              No software or AI can guarantee perfect outcomes.
+              Our aim is to reduce overlooked tasks and improve
+              consistency and visibility. Any future AI suggestions
+              would still require appropriate human review.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>What is the difference between Main Stock and Stock?</summary>
-            <p>Main Stock organizes a warehouse through nested shelves and products. Stock manages daily inventory by location, with reservations, purchases and transfers. Market orders can include products from both sources.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>How are list templates different from calendar tasks?</summary>
-            <p>Lists creates reusable templates that produce new active checklists or task lists. Calendar tasks belong to specific dates and can be assigned to departments and staff. Both preserve completion records.</p>
-          </details>
-
-          <details class="faq-item">
-            <summary>Can checklist items be linked to stock?</summary>
-            <p>Yes. Add Tracked Items lets you select stock products when preparing a template. These receive quantity fields, and entered quantities are reflected in stock when the list is completed.</p>
+            <p>
+              Main Stock organizes the warehouse through nested shelves.
+              Stock manages daily inventory by location, including
+              reservations, purchases and transfers. Market orders
+              can use products from both sources.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Which reports can be exported?</summary>
-            <p>Main Stock and Allergens provide PDF exports. Damage Statistics supports Excel, PDF and TXT. Administrative backup and restore uses JSON.</p>
+            <p>
+              Main Stock and Allergens provide PDF exports.
+              Damage Statistics supports Excel, PDF and TXT.
+              Administrative backup and restore uses JSON.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Where can I follow launch updates?</summary>
-            <p>Check this website and the Contact section. Our official Instagram, Facebook, X and LinkedIn links are coming soon. You can also email us directly with product or launch questions.</p>
+            <p>
+              Check this website and the Contact section. Official
+              Instagram, Facebook, X and LinkedIn links are coming
+              soon. You can also email us with questions.
+            </p>
           </details>
 
           <details class="faq-item">
             <summary>Are the screens on this website live?</summary>
-            <p>No. This is a product introduction and user guide. The displayed application screens are screenshots, not live staff, inventory or messaging interfaces.</p>
+            <p>
+              No. This is a product introduction and user guide.
+              The application screens are screenshots rather
+              than live staff, inventory or messaging interfaces.
+            </p>
           </details>
         </div>
       </div>
@@ -1894,14 +2930,14 @@
     <section class="section contact-section" id="contact" aria-labelledby="contact-title">
       <div class="container contact-layout">
         <div class="contact-copy reveal">
-          <p class="eyebrow">09 / Contact & updates</p>
+          <p class="eyebrow">10 / Contact & updates</p>
           <h2 class="section-title" id="contact-title" tabindex="-1">
             Let's talk.<br><span class="muted">Stay in the loop.</span>
           </h2>
           <p>
-            Running a restaurant or hotel? Have a question about the
-            platform, browser compatibility, our demo stage or the
-            upcoming commercial launch? We'd love to hear from you.
+            Running a restaurant or hotel? Ask about the platform,
+            our demo stage, the commercial launch or our future
+            AI direction. We'd love to hear from you.
           </p>
           <a class="contact-email" href="mailto:izybe.app@gmail.com">
             <span>izybe.app@gmail.com</span>
@@ -1919,16 +2955,17 @@
             <span class="launch-badge">Coming soon</span>
           </div>
           <p>
-            Two years in development. London restaurant demos underway.
-            Commercial launch coming soon. Keep following our journey —
-            our official social profile links will appear here when ready.
+            Two years in development. London demos underway.
+            Commercial launch coming soon, with AI assistance
+            being explored for future updates. Stay with us
+            as the platform evolves.
           </p>
 
           <!--
-            No official profile URLs have been supplied.
-            Replace the outer spans below with real links when available.
+            Official URLs have not been supplied.
+            Replace these outer spans with links when profiles are ready.
           -->
-          <ul class="social-list" aria-label="Upcoming official social profiles">
+          <ul class="social-list" aria-label="Upcoming social profiles">
             <li>
               <span class="social-placeholder">
                 <span class="social-symbol" aria-hidden="true">IG</span>
@@ -1968,19 +3005,24 @@
         <div class="closing-top reveal">
           <div>
             <p class="eyebrow">A new rhythm for hospitality.</p>
-            <h2 id="closing-title">Your team.<br>Your cloud workspace.</h2>
+            <h2 id="closing-title">Connected teams.<br>A clearer working day.</h2>
           </div>
           <span class="closing-arrow" aria-hidden="true">↗</span>
         </div>
+
         <div class="closing-bottom">
           <p>
-            Real-time operations for restaurants and hotels.
-            Access through your browser on iOS, Android, Windows,
-            Linux and macOS. Available for purchase soon.
+            Cloud-based operations for restaurants and hotels.
+            Commercial launch coming soon. Future AI assistance
+            is on the roadmap — with thoughtful data handling
+            at the centre of our exploration.
           </p>
-          <a class="button button-dark"
-            href="mailto:izybe.app@gmail.com?subject=izybe.app%20launch%20enquiry">
-            Ask about the launch <span class="arrow" aria-hidden="true">↗</span>
+          <a
+            class="button button-dark"
+            href="mailto:izybe.app@gmail.com?subject=izybe.app%20launch%20enquiry"
+          >
+            Ask about the launch
+            <span class="arrow" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
@@ -1998,12 +3040,18 @@
             </span>
             <span class="brand-name">izybe<span>.app</span></span>
           </a>
+
           <p>
-            A cloud-based SaaS platform for restaurant and hotel operations.
-            Two years in development, with demo use and trials underway
+            Cloud-based restaurant and hotel operations.
+            Two years in development, with demos and trials
             at selected large London restaurants.
+            AI assistance is a future roadmap initiative.
           </p>
-          <a class="footer-email" href="mailto:izybe.app@gmail.com">izybe.app@gmail.com</a>
+
+          <a class="footer-email" href="mailto:izybe.app@gmail.com">
+            izybe.app@gmail.com
+          </a>
+
           <span class="footer-caption">
             IOS · ANDROID · WINDOWS · LINUX · MACOS<br>
             THROUGH A COMPATIBLE MODERN BROWSER
@@ -2022,14 +3070,15 @@
           </ul>
         </nav>
 
-        <nav class="footer-column" aria-label="Team modules">
+        <nav class="footer-column" aria-label="Team and future tools">
           <h3>Your team</h3>
           <ul>
             <li><a href="#guide-staff">Staff management</a></li>
             <li><a href="#guide-shifts">Shift planning</a></li>
             <li><a href="#guide-messages">Team messaging</a></li>
             <li><a href="#guide-todo">Calendar tasks</a></li>
-            <li><a href="#guide-settings">Settings & administration</a></li>
+            <li><a href="#guide-settings">Administration</a></li>
+            <li><a href="#ai-roadmap">AI assistance — roadmap</a></li>
           </ul>
         </nav>
 
@@ -2037,8 +3086,7 @@
           <h3>Explore</h3>
           <ul>
             <li><a href="#platform">Cloud & device access</a></li>
-            <li><a href="#journey">Development & London demos</a></li>
-            <li><a href="#modules">Platform modules</a></li>
+            <li><a href="#journey">Our journey & London demos</a></li>
             <li><a href="#experience">Application screens</a></li>
             <li><a href="#guide">User guide</a></li>
             <li><a href="#controls">Permissions & data</a></li>
@@ -2068,34 +3116,52 @@
     </div>
   </footer>
 
-  <!-- LAUNCH ANNOUNCEMENT -->
-  <dialog class="launch-modal" id="launch-modal"
-    aria-labelledby="launch-title" aria-describedby="launch-description">
+  <!-- LAUNCH POPUP -->
+  <dialog
+    class="launch-modal"
+    id="launch-modal"
+    aria-labelledby="launch-title"
+    aria-describedby="launch-description"
+  >
     <div class="launch-modal-inner">
-      <button class="launch-close" id="launch-close" type="button"
-        aria-label="Close launch announcement" autofocus>×</button>
+      <button
+        class="launch-close"
+        id="launch-close"
+        type="button"
+        aria-label="Close launch announcement"
+        autofocus
+      >×</button>
 
       <div class="launch-brand">
         <img src="images/logo.png" alt="" width="44" height="44">
         <span>izybe.app</span>
       </div>
 
-      <div><span class="launch-badge">Commercial launch coming soon</span></div>
+      <div>
+        <span class="launch-badge">Commercial launch coming soon</span>
+      </div>
 
       <h2 id="launch-title">
         Hospitality.<br><span>Connected.</span>
       </h2>
 
       <p class="launch-message" id="launch-description">
-        <strong>Our cloud-based restaurant and hotel platform will
-        be available for purchase soon.</strong>
-        Work in real time through your browser on iOS, Android,
-        Windows, Linux and macOS.
+        <strong>Our restaurant and hotel platform will be available
+        for purchase soon.</strong>
+        Cloud-based, real-time operations through your browser
+        on iOS, Android, Windows, Linux and macOS.
       </p>
 
       <p class="launch-proof">
         Two years in development. Currently in demo use and trials
         at selected large restaurants in London.
+      </p>
+
+      <p class="launch-ai-note">
+        <strong>Also on our roadmap: AI-assisted workflows.</strong>
+        We are exploring manager-like support and possible local
+        AI processing for future updates. Not yet available;
+        plans and implementation may change.
       </p>
 
       <p class="launch-message">
@@ -2114,7 +3180,7 @@
 
       <p class="launch-small">
         Instagram · Facebook · X · LinkedIn — Coming soon.<br>
-        Internet connection and a compatible modern browser required.
+        Internet connection and a compatible browser required.
       </p>
     </div>
   </dialog>
@@ -2132,7 +3198,9 @@
 
       $("#year").textContent = new Date().getFullYear();
 
-      /* MOBILE MENU */
+      /* ================================================
+         MOBILE MENU
+      ================================================ */
       const menuButton = $(".menu-toggle");
       const mobileMenu = $("#mobile-menu");
       const main = $("main");
@@ -2199,12 +3267,16 @@
           if (event.matches) setMenu(false);
         });
 
-      /* GUIDE SEARCH: ALL CONTENT IS ALREADY IN THE HTML */
+      /* ================================================
+         SEARCH EXISTING GUIDE HTML
+      ================================================ */
       const search = $("#guide-search");
       const guideItems = [...document.querySelectorAll(".wiki-item")];
 
-      const normalize = value => value.toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const normalize = value =>
+        value.toLowerCase()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "");
 
       const searchIndex = guideItems.map(item => ({
         element: item,
@@ -2213,7 +3285,9 @@
 
       function filterGuide() {
         const words = normalize(search.value.trim())
-          .split(/\s+/).filter(Boolean);
+          .split(/\s+/)
+          .filter(Boolean);
+
         let matches = 0;
 
         searchIndex.forEach(item => {
@@ -2230,13 +3304,16 @@
       $("#guide-search-control").hidden = false;
       search.addEventListener("input", filterGuide);
 
-      /* GUIDE DEEP LINKS */
-      function revealGuide(target, shouldFocus = false, instant = false) {
+      /* ================================================
+         GUIDE ANCHOR NAVIGATION
+      ================================================ */
+      function revealGuide(target, shouldFocus = false, initial = false) {
         search.value = "";
         filterGuide();
         target.open = true;
+
         target.scrollIntoView({
-          behavior: instant ? "instant" : scrollBehavior(),
+          behavior: initial ? "instant" : scrollBehavior(),
           block: "start"
         });
 
@@ -2248,6 +3325,7 @@
       document.addEventListener("click", event => {
         const link = event.target.closest('a[href^="#guide-"]');
         if (!link) return;
+
         if (
           event.ctrlKey || event.metaKey ||
           event.shiftKey || event.altKey
@@ -2255,6 +3333,7 @@
 
         const hash = link.getAttribute("href");
         const target = document.getElementById(hash.slice(1));
+
         if (!target || !target.matches("details.wiki-item")) return;
 
         event.preventDefault();
@@ -2268,16 +3347,19 @@
         revealGuide(target, true);
       });
 
-      function handleGuideHash(instant = false) {
+      function handleGuideHash(initial = false) {
         const target = document.getElementById(location.hash.slice(1));
+
         if (target && target.matches("details.wiki-item")) {
-          revealGuide(target, false, instant);
+          revealGuide(target, false, initial);
         }
       }
 
       window.addEventListener("hashchange", () => handleGuideHash());
 
-      /* SCREENSHOT EXPLORER */
+      /* ================================================
+         SCREENSHOT EXPLORER
+      ================================================ */
       const screens = [
         {
           file: "lists.png",
@@ -2313,7 +3395,7 @@
           file: "damage.png",
           title: "Make losses visible.",
           description: "Review tracked products and access their damage records.",
-          alt: "izybe.app damage reports screen with tracked products"
+          alt: "izybe.app damage reports screen showing tracked products"
         }
       ];
 
@@ -2344,13 +3426,19 @@
           const index = Number(button.dataset.screen);
           const screen = screens[index];
 
-          $("#screen-number").textContent = String(index + 1).padStart(2, "0");
+          $("#screen-number").textContent =
+            String(index + 1).padStart(2, "0");
           $("#screen-title").textContent = screen.title;
           $("#screen-description").textContent = screen.description;
 
-          showImage();
           screenImage.alt = screen.alt;
-          screenImage.src = `images/${screen.file}`;
+
+          const nextSource = `images/${screen.file}`;
+
+          if (screenImage.getAttribute("src") !== nextSource) {
+            showImage();
+            screenImage.src = nextSource;
+          }
 
           document.querySelectorAll("[data-screen]").forEach(control => {
             control.setAttribute("aria-pressed", String(control === button));
@@ -2358,7 +3446,9 @@
         });
       });
 
-      /* OPTIONAL SCROLL REVEAL */
+      /* ================================================
+         OPTIONAL SCROLL REVEAL
+      ================================================ */
       if ("IntersectionObserver" in window && !reducedMotion.matches) {
         const observer = new IntersectionObserver(entries => {
           entries.forEach(entry => {
@@ -2369,14 +3459,17 @@
         }, { threshold: .08 });
 
         document.documentElement.classList.add("motion-ready");
-        document.querySelectorAll(".reveal")
-          .forEach(element => observer.observe(element));
+
+        document.querySelectorAll(".reveal").forEach(element => {
+          observer.observe(element);
+        });
       }
 
-      /* LAUNCH ANNOUNCEMENT
-         Shown once per page load. No cookies or tracking.
-         Native dialog handles keyboard focus and Escape.
-      */
+      /* ================================================
+         LAUNCH ANNOUNCEMENT
+         Opens once per page load.
+         No tracking, cookies or subscription processing.
+      ================================================ */
       const launchModal = $("#launch-modal");
       let closeDestination = null;
 
@@ -2385,8 +3478,13 @@
         if (launchModal.open) launchModal.close();
       }
 
-      $("#launch-close").addEventListener("click", () => closeAnnouncement());
-      $("#launch-explore").addEventListener("click", () => closeAnnouncement());
+      $("#launch-close").addEventListener("click", () => {
+        closeAnnouncement();
+      });
+
+      $("#launch-explore").addEventListener("click", () => {
+        closeAnnouncement();
+      });
 
       $("#launch-updates").addEventListener("click", event => {
         if (
@@ -2400,6 +3498,7 @@
 
       launchModal.addEventListener("close", () => {
         document.body.classList.remove("modal-open");
+
         const destination = closeDestination;
         closeDestination = null;
 
@@ -2422,13 +3521,17 @@
         }
       });
 
+      // Native dialog handles Escape and modal keyboard focus.
+      // Clicking outside also dismisses the announcement.
       let startedOnBackdrop = false;
 
       function isOutsideDialog(event) {
         const rect = launchModal.getBoundingClientRect();
         return (
-          event.clientX < rect.left || event.clientX > rect.right ||
-          event.clientY < rect.top || event.clientY > rect.bottom
+          event.clientX < rect.left ||
+          event.clientX > rect.right ||
+          event.clientY < rect.top ||
+          event.clientY > rect.bottom
         );
       }
 
@@ -2446,14 +3549,15 @@
           startedOnBackdrop &&
           event.target === launchModal &&
           isOutsideDialog(event)
-        ) closeAnnouncement();
-
+        ) {
+          closeAnnouncement();
+        }
         startedOnBackdrop = false;
       });
 
       function openAnnouncement() {
-        // The same launch information remains visible in the page
-        // if a browser does not support native modal dialogs.
+        // All announcement content is also present on the page
+        // for browsers without native dialog support.
         if (
           typeof launchModal.showModal !== "function" ||
           launchModal.open

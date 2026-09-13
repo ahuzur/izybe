@@ -7,7 +7,7 @@
   <title>izybe.app | Cloud Operations for Restaurants & Hotels</title>
   <meta
     name="description"
-    content="Cloud-based restaurant and hotel operations software for staff, stock, checklists and shifts. Commercial launch coming soon. AI assistance on the roadmap."
+    content="Modular restaurant and hotel operations software. Department-specific dashboards, PIN sign-in, staff, stock, checklists and shifts on mobile and Windows browsers. Commercial launch coming soon."
   >
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#f3f1e9">
@@ -27,7 +27,7 @@
   >
   <meta
     property="og:description"
-    content="Two years in development. London restaurant demos underway. Cloud-based hospitality operations, launching commercially soon. AI assistance is a future roadmap initiative."
+    content="Modular hospitality operations with three dashboard layouts and tools tailored to each department. Mobile and Windows browser access. London trials underway; commercial launch coming soon."
   >
   <meta property="og:image" content="https://izybe.app/images/dashboard.png">
   <meta property="og:image:alt" content="izybe.app hospitality operations dashboard">
@@ -39,7 +39,7 @@
   >
   <meta
     name="twitter:description"
-    content="Staff, stock and daily workflows in one browser-based workspace. Commercial launch coming soon. Future AI assistance under exploration."
+    content="One platform. Only the tools each team needs. Three dashboard layouts, PIN sign-in and browser access on mobile and Windows. Commercial launch coming soon."
   >
   <meta name="twitter:image" content="https://izybe.app/images/dashboard.png">
   <meta name="twitter:image:alt" content="izybe.app hospitality dashboard">
@@ -81,7 +81,7 @@
         "@id": "https://izybe.app/#webpage",
         "name": "izybe.app | Cloud Operations for Restaurants & Hotels",
         "url": "https://izybe.app/",
-        "description": "A cloud-based hospitality operations platform approaching commercial launch, with AI assistance being explored for future updates.",
+        "description": "A modular hospitality operations platform with department-specific tools, three dashboard layouts and PIN sign-in, approaching commercial launch.",
         "inLanguage": "en",
         "isPartOf": {
           "@id": "https://izybe.app/#website"
@@ -110,6 +110,9 @@
         },
         "featureList": [
           "Cloud-based SaaS delivery",
+          "Modules enabled or disabled by department",
+          "Three dashboard layouts for different daily workflows",
+          "PIN-based sign-in",
           "Real-time operational workflows",
           "Browser-based access across supported operating systems",
           "Checklist and template management",
@@ -1580,6 +1583,37 @@
     }
     .motion-ready .reveal.is-visible { opacity: 1; transform: none; }
 
+
+    /* DEPARTMENT-SPECIFIC DASHBOARDS */
+    .dashboard-section { background: var(--paper); }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .dashboard-card {
+      display: flex; flex-direction: column;
+      padding: 30px; border: 1px solid var(--line);
+      border-radius: 21px; background: var(--white);
+      min-width: 0;
+    }
+    .dashboard-card:first-child { background: var(--lime); border-color: var(--lime); }
+    .dashboard-card > span { font: 12px/1.6 ui-monospace, monospace; color: #4e5938; }
+    .dashboard-card h3 { margin-top: 24px; font-size: 29px; font-weight: 500; letter-spacing: -.04em; }
+    .dashboard-card p { margin-top: 16px; font-size: 16px; line-height: 1.75; color: #555d49; }
+    .dashboard-card ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 24px 0; margin: auto 0 0; }
+    .dashboard-card li { padding: 8px 12px; border: 1px solid #bfc8aa; border-radius: 99px; font-size: 14px; line-height: 1.5; }
+    .dashboard-card a { align-self: flex-start; font-size: 14px; line-height: 1.7; text-decoration: underline; text-underline-offset: 4px; }
+    .dashboard-note { margin-top: 24px; max-width: 850px; color: var(--muted); font-size: 16px; line-height: 1.8; }
+    .launch-readiness { margin-top: 32px; padding: 30px; border: 1px solid #cdd3be; border-radius: 20px; }
+    .launch-readiness h3 { font-size: 25px; font-weight: 500; letter-spacing: -.035em; }
+    .launch-readiness p { margin-top: 14px; font-size: 16px; line-height: 1.8; color: #59634c; max-width: 950px; }
+    .launch-readiness a { text-decoration: underline; text-underline-offset: 3px; }
+    @media (max-width: 850px) {
+      .dashboard-grid { grid-template-columns: 1fr; }
+      .dashboard-card, .launch-readiness { padding: 26px; }
+    }
+
     /* TABLET */
     @media (max-width: 1150px) {
       .container { width: calc(100% - 64px); }
@@ -1838,6 +1872,7 @@
     <a href="#platform">Why izybe</a>
     <a href="#journey">Our journey</a>
     <a href="#modules">Modules</a>
+    <a href="#dashboards">Dashboards</a>
     <a href="#experience">Experience</a>
     <a href="#ai-roadmap">AI roadmap</a>
     <a href="#guide">User guide</a>
@@ -1864,10 +1899,11 @@
             </h1>
 
             <p class="hero-description">
-              <strong>Your hospitality operation. Connected in real time.</strong>
-              A cloud-based SaaS platform for restaurants and hotels,
-              bringing staff, stock, checklists and shifts into one
-              browser-based workspace.
+              <strong>One platform. Only the tools each team needs.</strong>
+              Modular operations for restaurants and hotels. Bring staff,
+              stock, checklists and shifts together, with dashboards
+              tailored to each department. Built for mobile and Windows
+              through your browser.
             </p>
 
             <div class="hero-buttons">
@@ -1912,8 +1948,8 @@
             <div class="float-label float-one">
               <span class="float-symbol" aria-hidden="true">☁</span>
               <div>
-                <strong>One cloud. Connected teams.</strong>
-                <small>Real-time operational workflows.</small>
+                <strong>Your team. Your tools.</strong>
+                <small>Modules tailored to each department.</small>
               </div>
             </div>
 
@@ -1937,7 +1973,7 @@
           </div>
           <div>
             <strong>11 modules</strong>
-            <small>One connected cloud workspace</small>
+            <small>Enable only what each department needs</small>
           </div>
           <div>
             <strong>London</strong>
@@ -1958,9 +1994,9 @@
             </h2>
           </div>
           <p>
-            Software as a Service, built around restaurant and hotel teams.
-            Access your cloud workspace through a compatible browser
-            and work together in real time.
+            A responsive workspace for restaurant and hotel teams, from a
+            phone on the floor to a Windows computer in the office.
+            Each department sees the tools enabled for its work.
           </p>
         </div>
 
@@ -1983,8 +2019,7 @@
 
             <small class="browser-note">
               An internet connection and a compatible modern browser
-              are required. Camera features depend on device support
-              and browser permissions.
+              are required. Staff sign-in uses a PIN.
             </small>
           </article>
 
@@ -2044,6 +2079,17 @@
               restaurant and hotel operators, while exploring
               future improvements including AI-assisted workflows.
             </p>
+            <p>
+              Core development is nearing completion. Company formation
+              is underway, and our team is preparing the privacy
+              documentation. These details will be published as launch
+              preparations progress.
+            </p>
+            <p>
+              Pilot customer names remain private while we gather feedback
+              and agree what can be shared. References will be published
+              with customer approval.
+            </p>
             <a class="button button-dark" href="#contact">
               Ask about the launch
               <span class="arrow" aria-hidden="true">↗</span>
@@ -2100,9 +2146,9 @@
             </h2>
           </div>
           <p>
-            Eleven complementary modules for the people, products
-            and processes behind hospitality. Future AI assistance
-            is a separate roadmap initiative.
+            Eleven available modules, configured around your operation.
+            Enable or disable tools by department and match access to
+            each role. Teams use the features relevant to their work.
           </p>
         </div>
 
@@ -2226,6 +2272,44 @@
     </section>
 
     <!-- PRODUCT SCREENS -->
+    <!-- DEPARTMENT-SPECIFIC DASHBOARDS -->
+    <section class="section dashboard-section" id="dashboards" aria-labelledby="dashboards-title">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Your team / Your workspace</p>
+            <h2 class="section-title" id="dashboards-title">Three layouts.<br>Built around your team.</h2>
+          </div>
+          <p>Choose a focused dashboard for the task at hand. Turn modules on or off by department, and set role permissions to match responsibilities.</p>
+        </div>
+        <div class="dashboard-grid">
+          <article class="dashboard-card reveal">
+            <span>01 / SHIFT ENTRY</span>
+            <h3>Start with a PIN.</h3>
+            <p>A dedicated dashboard for staff clock-in. Give employees a focused entry point for the working day.</p>
+            <ul aria-label="Shift entry tools"><li>PIN sign-in</li><li>Clock-in</li></ul>
+            <a href="#guide-staff">Explore staff attendance ↗</a>
+          </article>
+          <article class="dashboard-card reveal">
+            <span>02 / DAMAGE RECORDING</span>
+            <h3>Record it. Carry on.</h3>
+            <p>A focused dashboard for damaged items. Keep damage recording close at hand for the teams responsible for it.</p>
+            <ul aria-label="Damage dashboard tools"><li>Damage items</li><li>Damage records</li></ul>
+            <a href="#guide-damage">Explore damage reporting ↗</a>
+          </article>
+          <article class="dashboard-card reveal">
+            <span>03 / LISTS & MESSAGES</span>
+            <h3>Two buttons.<br>Daily essentials.</h3>
+            <p>A simple dashboard with direct access to lists and messages. Help teams reach their daily tasks and conversations quickly.</p>
+            <ul aria-label="Daily essentials tools"><li>Lists</li><li>Messages</li></ul>
+            <a href="#guide-lists">Explore daily checklists ↗</a>
+          </article>
+        </div>
+        <p class="dashboard-note">The dashboard is modular. A kitchen, floor team and management team can each have a different setup. Enable the tools each department needs and keep unused modules out of its workspace.</p>
+        <p class="dashboard-note">Responsive layouts support mobile use and Windows desktop browsers. The cards above describe the three dashboard options; the gallery below shows individual application screens.</p>
+      </div>
+    </section>
+
     <section class="section showcase" id="experience" aria-labelledby="experience-title">
       <div class="container showcase-layout">
         <div class="showcase-copy reveal">
@@ -2235,7 +2319,8 @@
           </h2>
           <p>
             Color-coded statuses, visible priorities and dedicated module
-            screens. Explore the operational tools behind your workspace.
+            screens. Explore individual tools below, then choose the
+            dashboard layout and modules that fit your team.
           </p>
 
           <div
@@ -2479,12 +2564,12 @@
                 <h3>Staff management & working hours</h3>
               </summary>
               <div class="wiki-body">
-                <p>Manage employee records, attendance, breaks and working-hours reports. Authentication can use a PIN or configured face recognition.</p>
+                <p>Manage employee records, attendance, breaks and working-hours reports. Staff authentication uses a PIN.</p>
                 <h4>Add and manage staff</h4>
                 <ol>
                   <li>Log in to Staff Management and press Add Staff. Enter first name, last name and a unique staff number.</li>
                   <li>Choose full-time, part-time or agency status, position and department. Agency staff require an agency.</li>
-                  <li>Set a four-digit PIN and optionally add a photo for face recognition.</li>
+                  <li>Set a four-digit PIN for staff sign-in.</li>
                   <li>Search by name or number, or filter by category, position, department and agency.</li>
                 </ol>
                 <h4>Attendance and reporting</h4>
@@ -2669,10 +2754,10 @@
                 </ul>
                 <h4>Administrative controls</h4>
                 <ol>
-                  <li>Configure dashboard categories, colors, visibility and damage settings.</li>
+                  <li>Choose the dashboard layout and configure categories, colors, visibility and damage settings. Enable or disable modules to suit each department.</li>
                   <li>Manage accounts, roles, module access and editing permissions.</li>
                   <li>Maintain departments, positions and agencies.</li>
-                  <li>Set PIN protection, admin credentials, PIN or face authentication and optional liveness detection.</li>
+                  <li>Set PIN protection, admin credentials and PIN-based authentication.</li>
                 </ol>
                 <h4>Backup and restore</h4>
                 <p>Export data as JSON, import a previous backup and configure available automatic backup settings. Review previous records in backup history.</p>
@@ -2708,12 +2793,12 @@
           <article class="control-card reveal">
             <span>01 / ACCESS</span>
             <h3>Give each role the right tools.</h3>
-            <p>Controls separate viewing, module access and editing permissions.</p>
+            <p>Configure module availability for each department, with separate viewing and editing permissions for each role.</p>
             <ul>
               <li>Category visibility and module access.</li>
               <li>Staff editing permissions.</li>
               <li>Settings PIN protection.</li>
-              <li>Supported authentication methods.</li>
+              <li>PIN-based staff sign-in.</li>
             </ul>
           </article>
           <article class="control-card reveal">
@@ -2738,6 +2823,17 @@
               <li>Restore controls in the Admin Panel.</li>
             </ul>
           </article>
+        </div>
+
+        <div class="launch-readiness reveal" id="hosting-details">
+          <h3>Managed cloud infrastructure.</h3>
+          <p>Application data is stored in Supabase. The application is hosted separately on Netlify, using managed services to support maintenance and incident response.</p>
+          <p>Department and role controls determine which tools staff can use. Staff sign-in uses a PIN.</p>
+        </div>
+        <div class="launch-readiness reveal" id="launch-readiness">
+          <h3>Preparing for commercial launch.</h3>
+          <p>Company formation is in progress. Our team is preparing the privacy documentation, and company and privacy information will be published here as it becomes ready.</p>
+          <p>For questions about data handling or launch preparations, contact <a href="mailto:izybe.app@gmail.com">izybe.app@gmail.com</a>.</p>
         </div>
 
         <p class="control-note">
@@ -2778,10 +2874,31 @@
             <p>
               Yes, through a compatible modern browser and an internet
               connection. Supported phones, tablets and computers can
-              access the platform. Camera features depend on device
-              capabilities and permissions. This is browser access,
-              not a claim of separate native apps for every system.
+              access the responsive platform, with layouts for mobile screens
+              and Windows desktops. No separate native app is required.
+              Staff sign-in uses a PIN.
             </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does every department have to use all eleven modules?</summary>
+            <p>No. The dashboard is modular. Enable or disable features according to department needs and configure role-based access. Each team can work with the tools relevant to its responsibilities.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What are the three dashboard options?</summary>
+            <p>A focused shift-entry dashboard, a damage-item dashboard, and a simple dashboard with two buttons for lists and messages. Choose the setup that fits the team's daily work.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How do staff sign in?</summary>
+            <p>Staff sign in with a PIN. Administrators configure staff PINs and the relevant access permissions.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where are application data and hosting managed?</summary>
+            <p>Application data is stored in Supabase, while the application is hosted separately on Netlify. See <a href="#controls">Permissions & data</a> for access controls and current information.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Where can I find company and privacy information?</summary>
+            <p>Company formation is underway and privacy documentation is being prepared by the team. These details will be added to the website as launch preparations progress. Contact us with questions in the meantime.</p>
           </details>
 
           <details class="faq-item">
@@ -2808,7 +2925,8 @@
               The application is currently being used and tested in
               demo form at selected large restaurants in London.
               These are demo deployments and trials ahead of the
-              commercial launch.
+              commercial launch. Customer names and results will be
+              shared after feedback and customer approval.
             </p>
           </details>
 
@@ -3087,7 +3205,9 @@
           <ul>
             <li><a href="#platform">Cloud & device access</a></li>
             <li><a href="#journey">Our journey & London demos</a></li>
+            <li><a href="#dashboards">Three dashboard layouts</a></li>
             <li><a href="#experience">Application screens</a></li>
+            <li><a href="#launch-readiness">Company & privacy updates</a></li>
             <li><a href="#guide">User guide</a></li>
             <li><a href="#controls">Permissions & data</a></li>
             <li><a href="#faq">FAQs</a></li>
@@ -3148,8 +3268,9 @@
       <p class="launch-message" id="launch-description">
         <strong>Our restaurant and hotel platform will be available
         for purchase soon.</strong>
-        Cloud-based, real-time operations through your browser
-        on iOS, Android, Windows, Linux and macOS.
+        Choose the tools each department needs, with three dashboard
+        layouts and PIN sign-in. Access your workspace through a browser
+        on mobile, Windows and other supported systems.
       </p>
 
       <p class="launch-proof">

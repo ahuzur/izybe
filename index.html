@@ -1266,110 +1266,30 @@
       overflow-wrap: anywhere;
     }
 
-    /* CONTACT */
-    .contact-section { border-top: 1px solid var(--line); }
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 75px;
-      align-items: start;
-    }
-    .contact-copy .eyebrow { margin-bottom: 24px; }
-    .contact-copy > p {
-      max-width: 420px;
-      margin-top: 24px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.85;
-    }
-    .contact-email {
-      display: inline-flex;
-      align-items: center;
-      gap: 18px;
-      max-width: 100%;
-      margin-top: 30px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--ink);
-      font-size: clamp(20px, 2.4vw, 32px);
-      font-weight: 500;
-      letter-spacing: -.045em;
-    }
-    .contact-email:hover { color: #607143; }
-    .contact-email span:first-child { overflow-wrap: anywhere; }
-    .contact-note {
-      display: block;
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 11px;
-      line-height: 1.7;
-    }
-    .contact-panel {
-      padding: 32px;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: var(--white);
-    }
-    .contact-panel-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-bottom: 18px;
-    }
-    .contact-panel h3 {
-      font-size: 23px;
-      font-weight: 500;
-      letter-spacing: -.045em;
-    }
-    .launch-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 11px;
-      border-radius: 100px;
-      background: var(--lime);
-      color: var(--ink);
-      font: 10px/1.4 ui-monospace, monospace;
-    }
-    .launch-badge::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      flex-shrink: 0;
-      border-radius: 50%;
-      background: currentColor;
-    }
-    .contact-panel > p { color: var(--muted); font-size: 12px; line-height: 1.85; }
-    .social-list { display: grid; gap: 10px; margin: 24px 0 0; padding: 0; list-style: none; }
-    .social-placeholder {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 15px;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      background: var(--paper);
-    }
-    .social-symbol {
-      display: grid;
-      place-items: center;
-      width: 35px;
-      height: 35px;
-      flex-shrink: 0;
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .social-name { font-size: 12px; font-weight: 500; }
-    .social-status {
-      margin-left: auto;
-      color: var(--muted);
-      font: 9px/1.5 ui-monospace, monospace;
-      text-align: right;
-    }
-    a.social-placeholder:hover { border-color: #849653; background: #edf1df; }
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">10 / Contact & updates</p>
+          <h2 class="section-title" id="contact-title" tabindex="-1">
+            Let's talk.<br><span class="muted">Stay in the loop.</span>
+          </h2>
+          <p>
+            Running a restaurant or hotel? Ask about the platform,
+            our demo stage, the commercial launch or our future
+            AI direction. We'd love to hear from you.
+          </p>
+          <a class="contact-email" href="mailto:info@izybe.app">
+            <span>info@izybe.app</span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+          <small class="contact-note">
+            Product questions, demo enquiries, launch information
+            and collaboration opportunities.
+          </small>
+        </div>
+      </div>
+    </section>
 
     /* CLOSING & FOOTER */
     .closing { padding-block: 76px 68px; overflow: hidden; background: var(--lime); }

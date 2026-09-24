@@ -96,28 +96,48 @@
         const ages = ["now", "2m", "6m", "11m", "15m"];
         const scoreEl = $("#hx-score-val"), barEl = $("#hx-bar-fill");
         let score = 86, n = 4, feedTimer = null, inView = true;
-    
+
         const itemHTML = e =>
             `<span class="hx-ico ${e.tone}"><svg class="icon" aria-hidden="true"><use href="#${e.ico}"/></svg></span>` +
             `<span class="hx-txt"><b>${e.title}</b><small>${e.meta}</small></span><time></time>`;
-    
+
+        const pings = $("#hx-pings");
+        const spots = [
+            { y: "22%", x: "40%" }, { y: "40%", x: "46%" },
+            { y: "30%", x: "30%" }, { y: "14%", x: "26%" }
+        ];
+        let spot = 0;
+        function spawnPing(text) {
+            if (!pings) return;
+            const s = spots[spot++ % spots.length];
+            const el = document.createElement("span");
+            el.className = "hx-ping";
+            el.textContent = text;
+            el.style.setProperty("--y", s.y);
+            el.style.setProperty("--x", s.x);
+            el.addEventListener("animationend", ev => { if (ev.animationName === "hxPingLife") el.remove(); });
+            pings.appendChild(el);
+            while (pings.children.length > 2) pings.firstElementChild.remove();
+        }
+
         function stamp() {
             [...feed.children].forEach((li, i) => { li.querySelector("time").textContent = ages[i] || ""; });
         }
         stamp();
-    
+
         function tick() {
             const e = events[n++ % events.length];
             const li = document.createElement("li");
             li.className = "is-new";
             li.innerHTML = itemHTML(e);
             feed.prepend(li);
-            const step = li.offsetHeight + 10;
+            const step = li.offsetHeight + (parseFloat(getComputedStyle(feed).rowGap) || 10);
             feed.style.transition = "none";
             feed.style.transform = `translate3d(0, ${-step}px, 0)`;
             void feed.offsetHeight;
             feed.style.transition = "";
             feed.style.transform = "";
+            spawnPing(e.title);
             stamp();
             setTimeout(() => {
                 li.classList.remove("is-new");
@@ -134,7 +154,7 @@
             feedTimer = setInterval(tick, 2800);
         }
         function stopFeed() { clearInterval(feedTimer); feedTimer = null; }
-    
+
         if ("IntersectionObserver" in window) {
             new IntersectionObserver(([en]) => {
                 inView = en.isIntersecting;
@@ -173,7 +193,7 @@
         },
         {
             key: "work", label: "STAFF", title: "The working day starts here.", description: "A focused interface for staff clock-in and working-time management.", alt: "izybe.app staff start-work dialog with identification and time controls",
-            points: ["PIN or configured face recognition", "Start work, breaks and clock-out", "Clock reports with net working time"]
+            points: ["Personal PIN sign-in", "Start work, breaks and clock-out", "Clock reports with net working time"]
         },
         {
             key: "messages", label: "MESSAGES", title: "Team communication, built in.", description: "Follow real-time conversations without leaving the application.", alt: "izybe.app messaging screen with a conversation and message composer",
@@ -335,17 +355,52 @@
         });
     }
 
-    /* ---------- Scroll reveal ---------- */
-    if ("IntersectionObserver" in window && !reduced) {
+    /* ---------- Scroll reveal v2: directional, staggered, self-cleaning ---------- */
+    if ("IntersectionObserver" in window && !reduced) try {
         document.documentElement.classList.add("motion-ready");
+
+        const ZOOM = ".show-wrap, .wf, .ai-box, .contact-box, .closing .container, .timeline";
+        const LEFT = ".guide-side, .faq-side, .journey-top";
+
+        $$(".reveal").forEach(el => {
+            if (el.dataset.reveal) return;
+            if (el.classList.contains("head")) { el.dataset.reveal = "split"; return; }
+            if (el.matches(ZOOM)) { el.dataset.reveal = "zoom"; return; }
+            if (el.matches(LEFT)) { el.dataset.reveal = "left"; return; }
+
+            const parent = el.parentElement;
+            const sibs = [...parent.children].filter(c => c.classList.contains("reveal"));
+            if (sibs.length < 2) { el.dataset.reveal = "up"; return; }
+
+            // Grid item: direction from its column, stagger from its order in the row
+            const pr = parent.getBoundingClientRect();
+            const r = el.getBoundingClientRect();
+            const off = (r.left + r.width / 2 - (pr.left + pr.width / 2)) / pr.width;
+            el.dataset.reveal = off < -.12 ? "left" : off > .12 ? "right" : "up";
+            const row = sibs.filter(s => Math.abs(s.getBoundingClientRect().top - r.top) < 8);
+            el.style.setProperty("--d", `${row.indexOf(el) * .09}s`);
+        });
+
+        const cleanup = el => {
+            const d = parseFloat(getComputedStyle(el).getPropertyValue("--d")) || 0;
+            setTimeout(() => {
+                el.classList.remove("reveal", "in");
+                el.removeAttribute("data-reveal");
+            }, 1300 + d * 1000 + (el.dataset.reveal === "split" ? 200 : 0));
+        };
+
         const ro = new IntersectionObserver(entries => {
             entries.forEach(en => {
                 if (!en.isIntersecting) return;
                 en.target.classList.add("in");
+                cleanup(en.target);
                 ro.unobserve(en.target);
             });
-        }, { threshold: .08, rootMargin: "0px 0px -40px 0px" });
+        }, { threshold: .12, rootMargin: "0px 0px -60px 0px" });
         $$(".reveal").forEach(el => ro.observe(el));
+    } catch (err) {
+        // Safety net: never leave content hidden if anything above fails
+        document.documentElement.classList.remove("motion-ready");
     }
 
     /* ---------- Launch toast (non-blocking, once per session) ---------- */
@@ -371,6 +426,110 @@
     document.addEventListener("keydown", e => {
         if (e.key === "Escape" && toast.classList.contains("show")) hideToast();
     });
+
+    /* ---------- Daily workflow player (rAF + transforms only) ---------- */
+    const wf = document.querySelector(".wf");
+    if (wf) {
+        const tabs = [...wf.querySelectorAll(".wf-step")];
+        const scenes = [...wf.querySelectorAll(".wf-scene")];
+        const segs = [...wf.querySelectorAll(".wf-seg i")];
+        const progs = tabs.map(tab => tab.querySelector(".wf-prog i"));
+        const clock = wf.querySelector(".wf-clock");
+        const phase = wf.querySelector(".wf-phase");
+        const stateTxt = wf.querySelector(".wf-state span");
+        const D = 7000;
+        const ranges = [[360, 600], [600, 1200], [1200, 1380]];
+        const names = ["Plan", "Operate", "Review"];
+        const offTimers = [];
+        let t = 0, cur = -1, last = 0, raf = 0, visible = false, paused = false, started = false, lastClock = "";
+
+        function setStep(i) {
+            if (i === cur) return;
+            cur = i;
+            tabs.forEach((tab, k) => {
+                const on = k === i;
+                tab.classList.toggle("is-active", on);
+                if (on) tab.setAttribute("aria-current", "step"); else tab.removeAttribute("aria-current");
+            });
+            phase.textContent = names[i];
+            scenes.forEach((s, k) => {
+                if (k === i) {
+                    clearTimeout(offTimers[k]);
+                    s.classList.remove("is-play");
+                    void s.offsetWidth;
+                    s.classList.add("is-on", "is-play");
+                } else if (s.classList.contains("is-on")) {
+                    s.classList.remove("is-on");
+                    offTimers[k] = setTimeout(() => s.classList.remove("is-play"), 650);
+                }
+            });
+        }
+
+        function render() {
+            const i = Math.min(2, Math.floor(t / D));
+            const f = Math.min(1, (t - i * D) / D);
+            setStep(i);
+            const sx = k => `scaleX(${k < i ? 1 : k === i ? f.toFixed(4) : 0})`;
+            segs.forEach((s, k) => { s.style.transform = sx(k); });
+            progs.forEach((p, k) => { p.style.transform = sx(k); });
+            const [a, b] = ranges[i];
+            const m = Math.round((a + (b - a) * f) / 5) * 5;
+            const txt = `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
+            if (txt !== lastClock) { clock.textContent = txt; lastClock = txt; }
+        }
+
+        function frame(now) {
+            if (!last) last = now;
+            t += Math.min(64, now - last);
+            last = now;
+            if (t >= 3 * D) t = 0;
+            render();
+            raf = requestAnimationFrame(frame);
+        }
+        function play() {
+            if (reduced || raf || !visible || paused || document.hidden) return;
+            last = 0;
+            raf = requestAnimationFrame(frame);
+        }
+        function stop() { cancelAnimationFrame(raf); raf = 0; }
+        function setPaused(p) {
+            paused = p;
+            wf.classList.toggle("is-paused", p);
+            if (stateTxt) stateTxt.textContent = p ? "Paused" : "Auto-play";
+            p ? stop() : play();
+        }
+        function goTo(i) {
+            t = i * D + (reduced ? D - 1 : 0);
+            cur = -1;
+            render();
+        }
+
+        tabs.forEach((tab, i) => tab.addEventListener("click", () => goTo(i)));
+        wf.addEventListener("pointerenter", e => { if (e.pointerType === "mouse") setPaused(true); });
+        wf.addEventListener("pointerleave", e => { if (e.pointerType === "mouse") setPaused(false); });
+        wf.addEventListener("focusin", () => setPaused(true));
+        wf.addEventListener("focusout", e => { if (!wf.contains(e.relatedTarget)) setPaused(false); });
+
+        function start() {
+            if (started) return;
+            started = true;
+            goTo(0);
+        }
+
+        if (reduced) {
+            start();
+        } else if ("IntersectionObserver" in window) {
+            new IntersectionObserver(([en]) => {
+                visible = en.isIntersecting;
+                if (visible) { start(); play(); } else stop();
+            }, { threshold: .35 }).observe(wf);
+        } else {
+            visible = true;
+            start();
+            play();
+        }
+        document.addEventListener("visibilitychange", () => { document.hidden ? stop() : play(); });
+    }
 
     /* ---------- Back to top ---------- */
     if (fab) {

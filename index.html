@@ -4947,6 +4947,1273 @@
         height: 44px;
       }
     }
+  /* =====================================================
+       HERO PHOTO — full-bleed editorial backdrop (use.png)
+       Static image + one-off entrance; no blur, no blend modes
+    ===================================================== */
+    .hx-photo {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: 52vw;
+      overflow: hidden;
+      pointer-events: none;
+      background: #2a211c;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, .55) 12%, #000 30%);
+      mask-image: linear-gradient(90deg, transparent 0, rgba(0, 0, 0, .55) 12%, #000 30%);
+    }
+
+    .hx-photo picture,
+    .hx-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hx-photo img {
+      object-fit: cover;
+      object-position: 50% 35%;
+      transform: scale(1.08);
+      animation: hxPhotoIn 1.8s var(--ease) .05s forwards;
+    }
+
+    @keyframes hxPhotoIn {
+      to { transform: none; }
+    }
+
+    /* Warm ink wash: keeps the board & caption crisp, ties photo to the palette */
+    .hx-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(16, 19, 14, .28) 0%, rgba(16, 19, 14, 0) 26%, rgba(16, 19, 14, 0) 60%, rgba(16, 19, 14, .5) 100%),
+        linear-gradient(90deg, rgba(242, 241, 227, .18), rgba(16, 19, 14, .12));
+    }
+
+    /* Thin lime frame line — editorial detail */
+    .hx-photo::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 110px;
+      right: 28px;
+      bottom: 28px;
+      left: 30%;
+      border: 1px solid rgba(212, 250, 113, .45);
+      border-radius: 28px;
+    }
+
+    .hx .hx-note {
+      z-index: 2;
+      top: 6px;
+      left: auto;
+      right: 0;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .hx-caption {
+      position: absolute;
+      z-index: 2;
+      top: 34px;
+      right: 0;
+      max-width: 260px;
+      text-align: right;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 24px;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, .35);
+      animation: rise 1s .6s var(--ease) both;
+    }
+
+    .hx-caption span {
+      display: block;
+      margin-bottom: 8px;
+      font: 500 10.5px var(--mono);
+      font-style: normal;
+      letter-spacing: .14em;
+      color: var(--lime);
+      text-shadow: none;
+    }
+
+    /* Board: lift it off the photo */
+    .hx .hx-board {
+      left: auto;
+      right: 11%;
+      bottom: 40px;
+      z-index: 2;
+      box-shadow: 0 50px 90px -30px rgba(0, 0, 0, .55), 0 0 0 1px rgba(255, 255, 255, .6) inset;
+    }
+
+    /* Seal: lime on dark photo */
+    .hx .hx-seal {
+      z-index: 3;
+      right: auto;
+      left: 2%;
+      bottom: 300px;
+      background: var(--lime);
+      box-shadow: 0 24px 40px -18px rgba(0, 0, 0, .55);
+    }
+
+    .hx .hx-seal text {
+      fill: var(--ink);
+    }
+
+    @media (max-width: 1024px) {
+      .hx-photo {
+        top: auto;
+        left: 0;
+        width: 100%;
+        height: 640px;
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .6) 12%, #000 28%);
+        mask-image: linear-gradient(180deg, transparent 0, rgba(0, 0, 0, .6) 12%, #000 28%);
+      }
+
+      .hx-photo::before {
+        top: 110px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      .hx .hx-board {
+        right: 50%;
+        transform: translateX(50%);
+        animation: none;
+      }
+
+      .hx .hx-seal {
+        left: 0;
+        bottom: auto;
+        top: 40px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hx-photo {
+        height: 600px;
+      }
+
+      .hx-caption {
+        top: 30px;
+        font-size: 19px;
+        max-width: 200px;
+      }
+
+      .hx .hx-board {
+        bottom: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hx-photo img {
+        transform: none;
+        animation: none;
+      }
+    }
+  /* =====================================================
+       HERO HUD — "Today at a glance" as a see-through overlay
+       No backdrop-filter: translucent tint + hairlines only
+    ===================================================== */
+    .hx .hx-board {
+      right: 4%;
+      bottom: 34px;
+      width: min(330px, 88%);
+      padding: 16px 16px 6px;
+      border-radius: 24px;
+      color: #fff;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, 0) 42%),
+        linear-gradient(180deg, rgba(16, 19, 14, .18), rgba(16, 19, 14, .58));
+      border: 1px solid rgba(255, 255, 255, .2);
+      box-shadow: 0 30px 60px -34px rgba(0, 0, 0, .6);
+      opacity: .92;
+      transition: opacity .4s var(--ease), transform .5s var(--ease);
+      animation: hxHudIn 1.1s .5s var(--ease) both;
+    }
+
+    .hx .hx-board:hover {
+      opacity: 1;
+    }
+
+    @keyframes hxHudIn {
+      from { opacity: 0; transform: translate3d(0, 24px, 0); }
+      to { opacity: .92; transform: none; }
+    }
+
+    .hx .hx-board-head {
+      padding-bottom: 12px;
+      border-bottom-color: rgba(255, 255, 255, .16);
+    }
+
+    .hx .hx-board-head b {
+      font-size: 14px;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, .35);
+    }
+
+    .hx .hx-time {
+      color: rgba(255, 255, 255, .62);
+    }
+
+    .hx .hx-live {
+      background: rgba(212, 250, 113, .16);
+      color: var(--lime);
+    }
+
+    .hx .hx-live i {
+      background: var(--lime);
+      box-shadow: 0 0 0 3px rgba(212, 250, 113, .2);
+    }
+
+    .hx .hx-score {
+      padding: 12px 0;
+    }
+
+    .hx .hx-score small {
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .hx .hx-score strong {
+      font-size: 22px;
+      color: var(--lime);
+    }
+
+    .hx .hx-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .hx .hx-bar span {
+      background: linear-gradient(90deg, var(--lime), #6ee7c8);
+    }
+
+    /* Feed: shows ~2 rows, fades out with a mask (no white overlay) */
+    .hx .hx-feed {
+      height: 128px;
+      -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent);
+      mask-image: linear-gradient(180deg, #000 55%, transparent);
+    }
+
+    .hx .hx-feed::after {
+      content: none;
+    }
+
+    .hx .hx-feed ul {
+      gap: 8px;
+    }
+
+    .hx .hx-feed li {
+      padding: 8px 10px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .hx .hx-feed li.is-new {
+      animation: hxSlide .7s var(--ease) both;
+    }
+
+    @keyframes hxSlide {
+      from { opacity: 0; transform: translate3d(-18px, 0, 0); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .hx .hx-ico {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+    }
+
+    .hx .hx-ico .icon {
+      width: 15px;
+      height: 15px;
+    }
+
+    .hx .t-lime { background: rgba(212, 250, 113, .18); color: var(--lime); }
+    .hx .t-coral { background: rgba(255, 143, 122, .2); color: #ffb3a4; }
+    .hx .t-mint { background: rgba(110, 231, 200, .2); color: #8ff0d6; }
+    .hx .t-ink { background: rgba(16, 19, 14, .55); color: var(--lime); }
+    .hx .t-violet { background: rgba(185, 164, 255, .22); color: #cfc2ff; }
+    .hx .t-amber { background: rgba(255, 207, 112, .22); color: #ffd98f; }
+
+    .hx .hx-txt b {
+      font-size: 13px;
+      color: #fff;
+    }
+
+    .hx .hx-txt small {
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, .62);
+    }
+
+    .hx .hx-feed time {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    /* Floating live pings on the photo */
+    .hx-pings {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hx-ping {
+      position: absolute;
+      top: var(--y);
+      left: var(--x);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px 8px 10px;
+      border-radius: 99px;
+      background: rgba(16, 19, 14, .5);
+      border: 1px solid rgba(255, 255, 255, .22);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+      box-shadow: 0 14px 30px -16px rgba(0, 0, 0, .6);
+      opacity: 0;
+      animation: hxPingLife 3.4s var(--ease) forwards;
+    }
+
+    .hx-ping::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 4px rgba(212, 250, 113, .22);
+    }
+
+    .hx-ping::after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      margin-top: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--lime);
+      animation: hxRipple 1.4s ease-out 2;
+    }
+
+    @keyframes hxPingLife {
+      0% { opacity: 0; transform: translate3d(0, 12px, 0) scale(.92); }
+      14% { opacity: 1; transform: none; }
+      78% { opacity: 1; transform: translate3d(0, -6px, 0); }
+      100% { opacity: 0; transform: translate3d(0, -16px, 0); }
+    }
+
+    @keyframes hxRipple {
+      from { opacity: .9; transform: scale(1); }
+      to { opacity: 0; transform: scale(3.2); }
+    }
+
+    @media (max-width: 1024px) {
+      .hx .hx-board {
+        right: 50%;
+        transform: translateX(50%);
+        animation: none;
+        opacity: .95;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .hx .hx-board {
+        bottom: 6px;
+        width: 92%;
+      }
+
+      .hx-ping {
+        left: min(var(--x), calc(100% - 230px));
+        font-size: 11.5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hx-pings {
+        display: none;
+      }
+    }
+  /* =====================================================
+       DAILY WORKFLOW — animated "day player"
+       Motion: transform + opacity only, runs only in view
+    ===================================================== */
+    .wf {
+      margin-top: 56px;
+      padding: 26px;
+      border-radius: 34px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 40px 80px -60px rgba(40, 50, 20, .45);
+    }
+
+    .wf-top {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 28px;
+      align-items: center;
+      padding: 4px 6px 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wf-time {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      min-width: 190px;
+    }
+
+    .wf-clock {
+      font: 500 44px/1 var(--mono);
+      letter-spacing: -.04em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .wf-phase {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      color: #5a870c;
+    }
+
+    .wf-segs {
+      display: grid;
+      grid-template-columns: 4fr 10fr 3fr;
+      gap: 6px;
+    }
+
+    .wf-seg {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: var(--paper-2);
+    }
+
+    .wf-seg i,
+    .wf-prog i,
+    .wf-meter i {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--lime-deep), #1d9577);
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    .wf-ticks {
+      display: grid;
+      grid-template-columns: 4fr 10fr 3fr 0fr;
+      margin-top: 10px;
+      font: 11px var(--mono);
+      color: var(--muted);
+    }
+
+    .wf-ticks span:last-child {
+      white-space: nowrap;
+      transform: translateX(-100%);
+    }
+
+    .wf-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 99px;
+      background: var(--paper);
+      font: 500 11px var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .wf-state i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime-deep);
+      animation: hxBlink 1.6s ease-in-out infinite;
+    }
+
+    .wf.is-paused .wf-state i {
+      animation: none;
+      background: #b9b9a6;
+    }
+
+    .wf-body {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 26px;
+      padding-top: 24px;
+    }
+
+    /* Steps */
+    .wf-steps {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .wf-step {
+      position: relative;
+      padding: 20px 22px 22px;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background .4s var(--ease), border-color .4s var(--ease);
+    }
+
+    .wf-step:hover {
+      background: var(--paper);
+    }
+
+    .wf-step.is-active {
+      background: var(--paper);
+      border-color: var(--line);
+    }
+
+    .wf-label {
+      display: flex;
+      justify-content: space-between;
+      font: 500 11px var(--mono);
+      letter-spacing: .12em;
+      color: var(--muted);
+    }
+
+    .wf-label small {
+      font-size: 11px;
+      letter-spacing: .02em;
+    }
+
+    .wf-step h3 {
+      margin-top: 10px;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: -.035em;
+    }
+
+    .wf-step h3 button {
+      all: unset;
+      cursor: pointer;
+    }
+
+    .wf-step h3 button:focus-visible {
+      outline: 2px solid var(--lime-deep);
+      outline-offset: 4px;
+      border-radius: 6px;
+    }
+
+    .wf-step p {
+      margin-top: 0;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      transition: max-height .5s var(--ease), opacity .4s var(--ease), margin-top .4s var(--ease);
+    }
+
+    .wf-step.is-active p {
+      max-height: 120px;
+      margin-top: 10px;
+      opacity: 1;
+    }
+
+    .wf-step:not(.is-active) h3 {
+      color: #7d816f;
+    }
+
+    .wf-prog {
+      position: absolute;
+      right: 22px;
+      bottom: 0;
+      left: 22px;
+      height: 3px;
+      overflow: hidden;
+      border-radius: 99px;
+      opacity: 0;
+      transition: opacity .3s;
+    }
+
+    .wf-step.is-active .wf-prog {
+      opacity: 1;
+    }
+
+    /* Screen */
+    .wf-screen {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--ink);
+      color: #fff;
+      min-height: 470px;
+    }
+
+    .wf-chrome {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      font: 11px var(--mono);
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .wf-chrome i {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .16);
+    }
+
+    .wf-chrome i:nth-child(3) {
+      background: var(--lime);
+    }
+
+    .wf-chrome span {
+      margin-left: 10px;
+    }
+
+    .wf-chrome em {
+      margin-left: auto;
+      font-style: normal;
+      letter-spacing: .12em;
+      font-size: 10px;
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .wf-scenes {
+      position: relative;
+      min-height: 420px;
+    }
+
+    .wf-scene {
+      position: absolute;
+      inset: 0;
+      padding: 18px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, 14px, 0);
+      transition: opacity .5s var(--ease), transform .6s var(--ease), visibility 0s .6s;
+    }
+
+    .wf-scene.is-on {
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      transition: opacity .5s var(--ease) .12s, transform .6s var(--ease) .12s;
+    }
+
+    .wf-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .wf-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .wf-bar .icon {
+      width: 17px;
+      height: 17px;
+      color: var(--lime);
+    }
+
+    .wf-bar small {
+      font: 11px var(--mono);
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .wf-rec {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff8f7a;
+      box-shadow: 0 0 0 4px rgba(255, 143, 122, .2);
+      animation: hxBlink 1.2s ease-in-out infinite;
+    }
+
+    .wf-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .wf-card {
+      padding: 14px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .wf-card-h {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .wf-card-h .icon {
+      width: 15px;
+      height: 15px;
+      color: var(--lime);
+    }
+
+    .wf-card-h small {
+      margin-left: auto;
+      font: 10.5px var(--mono);
+      color: rgba(255, 255, 255, .5);
+    }
+
+    /* Plan scene */
+    .wf-lines {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+
+    .wf-lines li {
+      padding: 9px 11px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .06);
+      font-size: 12.5px;
+      color: rgba(255, 255, 255, .85);
+    }
+
+    .wf-assign {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .wf-assign span {
+      padding: 5px 10px;
+      border-radius: 99px;
+      background: rgba(212, 250, 113, .14);
+      color: var(--lime);
+      font: 500 10.5px var(--mono);
+    }
+
+    .wf-grid {
+      display: grid;
+      grid-template-columns: 46px repeat(7, 1fr);
+      gap: 5px;
+      align-items: center;
+    }
+
+    .wf-grid b {
+      text-align: center;
+      font: 500 10px var(--mono);
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .wf-grid em {
+      font-style: normal;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .wf-grid i {
+      height: 22px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .wf-grid i.on {
+      background: var(--lime);
+    }
+
+    .wf-swap {
+      display: grid;
+      margin-top: 14px;
+    }
+
+    .wf-swap > * {
+      grid-area: 1 / 1;
+    }
+
+    .wf-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 13px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .wf-btn .icon {
+      width: 14px;
+      height: 14px;
+    }
+
+    .wf-btn.a {
+      background: var(--lime);
+      color: var(--ink);
+      opacity: 0;
+    }
+
+    .wf-btn.b {
+      background: rgba(212, 250, 113, .14);
+      color: var(--lime);
+      border: 1px solid rgba(212, 250, 113, .3);
+    }
+
+    /* Operate scene */
+    .wf-checks {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+
+    .wf-checks li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .05);
+      font-size: 12.5px;
+    }
+
+    .wf-box {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      border: 1.5px solid rgba(255, 255, 255, .3);
+    }
+
+    .wf-box::before {
+      content: "";
+      position: absolute;
+      inset: -1.5px;
+      border-radius: inherit;
+      background: var(--lime);
+    }
+
+    .wf-box .icon {
+      position: relative;
+      width: 12px;
+      height: 12px;
+      stroke-width: 3;
+      color: var(--ink);
+    }
+
+    .wf-ct {
+      position: relative;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .wf-ct::after {
+      content: "";
+      position: absolute;
+      top: 52%;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, .5);
+      transform-origin: left;
+    }
+
+    .wf-meter {
+      height: 5px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .wf-meter i {
+      background: linear-gradient(90deg, var(--lime), #6ee7c8);
+      transform: none;
+    }
+
+    .wf-count,
+    .wf-num {
+      display: inline-grid;
+    }
+
+    .wf-count > *,
+    .wf-num > * {
+      grid-area: 1 / 1;
+    }
+
+    .wf-count .a,
+    .wf-num .a {
+      opacity: 0;
+    }
+
+    .wf-num .b {
+      color: var(--lime);
+    }
+
+    .wf-stack {
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .wf-toast {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .09);
+    }
+
+    .wf-toast p {
+      min-width: 0;
+    }
+
+    .wf-toast b,
+    .wf-toast small {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .wf-toast b {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .wf-toast small {
+      margin-top: 2px;
+      font-size: 11.5px;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .wf-tico {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+      border-radius: 10px;
+    }
+
+    .wf-tico .icon {
+      width: 16px;
+      height: 16px;
+    }
+
+    .wf .t-ink { background: rgba(212, 250, 113, .14); color: var(--lime); }
+    .wf .t-amber { background: rgba(255, 207, 112, .2); color: #ffd98f; }
+    .wf .t-violet { background: rgba(185, 164, 255, .22); color: #cfc2ff; }
+
+    /* Review scene */
+    .wf-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .wf-kpis div {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .wf-kpis small {
+      display: block;
+      font-size: 11px;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .wf-kpis b {
+      display: block;
+      margin-top: 6px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -.04em;
+    }
+
+    .wf-kpis div:first-child b {
+      color: var(--lime);
+    }
+
+    .wf-chart {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+      height: 150px;
+      align-items: end;
+    }
+
+    .wf-chart span {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 6px;
+      height: 100%;
+    }
+
+    .wf-chart i {
+      align-self: end;
+      height: 100%;
+      border-radius: 8px 8px 4px 4px;
+      background: linear-gradient(180deg, var(--lime), rgba(212, 250, 113, .25));
+      transform: scaleY(var(--v));
+      transform-origin: bottom;
+    }
+
+    .wf-chart em {
+      text-align: center;
+      font: normal 10px var(--mono);
+      color: rgba(255, 255, 255, .45);
+    }
+
+    .wf-done {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 11px;
+      border-radius: 14px;
+      background: var(--lime);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .wf-done .icon {
+      width: 15px;
+      height: 15px;
+      stroke-width: 3;
+    }
+
+    /* ----- Scene choreography (only while .is-play) ----- */
+    @keyframes wfUp { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: none; } }
+    @keyframes wfPop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
+    @keyframes wfIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes wfOut { from { opacity: 1; } to { opacity: 0; } }
+    @keyframes wfX { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    @keyframes wfY { from { transform: scaleY(0); } to { transform: scaleY(var(--v)); } }
+    @keyframes wfSlide { from { opacity: 0; transform: translate3d(24px, 0, 0); } to { opacity: 1; transform: none; } }
+    @keyframes wfPress { 0%, 100% { transform: none; } 50% { transform: scale(.95); } }
+
+    /* Plan */
+    .wf-scene.is-play .wf-lines li { animation: wfUp .5s calc(.25s + var(--i) * .22s) var(--ease) both; }
+    .wf-scene.is-play .wf-assign span { animation: wfPop .45s calc(1.3s + var(--i) * .18s) var(--ease) both; }
+    .wf-scene.is-play .wf-grid i { animation: wfPop .35s calc(1.6s + var(--i) * .07s) var(--ease) both; }
+    .wf-scene.is-play .wf-btn.a { animation: wfIn .4s 1.2s both, wfPress .3s 3.3s var(--ease), wfOut .3s 3.7s forwards; }
+    .wf-scene.is-play .wf-btn.b { animation: wfUp .45s 3.9s var(--ease) both; }
+
+    /* Operate */
+    .wf-scene.is-play .wf-box::before { animation: wfPop .35s calc(.7s + var(--i) * .8s) var(--ease) both; }
+    .wf-scene.is-play .wf-box .icon { animation: wfPop .35s calc(.8s + var(--i) * .8s) var(--ease) both; }
+    .wf-scene.is-play .wf-ct::after { animation: wfX .4s calc(.85s + var(--i) * .8s) var(--ease) both; }
+    .wf-scene.is-play .wf-meter i { animation: wfX 4.2s .6s linear both; }
+    .wf-scene.is-play .wf-count .a { animation: wfOut .2s 4.6s both; }
+    .wf-scene.is-play .wf-count .b { animation: wfIn .3s 4.7s both; }
+    .wf-scene.is-play .wf-toast { animation: wfSlide .6s var(--t) var(--ease) both; }
+    .wf-scene.is-play .wf-num .a { animation: wfOut .25s 3.2s both; }
+    .wf-scene.is-play .wf-num .b { animation: wfUp .35s 3.3s var(--ease) both; }
+
+    /* Review */
+    .wf-scene.is-play .wf-kpis div { animation: wfUp .5s calc(.25s + var(--i) * .15s) var(--ease) both; }
+    .wf-scene.is-play .wf-chart i { animation: wfY .8s calc(1s + var(--i) * .12s) var(--ease) both; }
+    .wf-scene.is-play .wf-done { animation: wfUp .5s 3.4s var(--ease) both; }
+
+    @media (max-width: 1024px) {
+      .wf-body {
+        grid-template-columns: 1fr;
+      }
+
+      .wf-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .wf-step p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .wf {
+        padding: 14px;
+        border-radius: 26px;
+      }
+
+      .wf-top {
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+      }
+
+      .wf-line {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .wf-clock {
+        font-size: 34px;
+      }
+
+      .wf-time {
+        min-width: 0;
+      }
+
+      .wf-steps {
+        gap: 6px;
+      }
+
+      .wf-step {
+        padding: 12px 12px 14px;
+        border-radius: 16px;
+      }
+
+      .wf-label small {
+        display: none;
+      }
+
+      .wf-step p,
+      .wf-step.is-active p {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+
+      .wf-step h3 {
+        font-size: 15px;
+      }
+
+      .wf-prog {
+        right: 12px;
+        left: 12px;
+      }
+
+      .wf-screen {
+        min-height: 560px;
+      }
+
+      .wf-scenes {
+        min-height: 510px;
+      }
+
+      .wf-scene {
+        padding: 12px;
+      }
+
+      .wf-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .wf-kpis {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .wf-chrome em {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .wf-scene.is-play *,
+      .wf-scene.is-play *::before,
+      .wf-scene.is-play *::after {
+        animation-delay: 0s !important;
+        animation-duration: .001ms !important;
+      }
+
+      .wf-state {
+        display: none;
+      }
+    }
+  /* =====================================================
+       REVEAL v2 — directional entrances (transform + opacity)
+    ===================================================== */
+    body {
+      overflow-x: clip;
+    }
+
+    .motion-ready .reveal {
+      --rv-x: 0px;
+      --rv-y: 34px;
+      --rv-s: 1;
+      opacity: 0;
+      transform: translate3d(var(--rv-x), var(--rv-y), 0) scale(var(--rv-s));
+      transition: opacity 1s var(--ease), transform 1.1s var(--ease);
+      transition-delay: var(--d, 0s);
+    }
+
+    .motion-ready .reveal[data-reveal="left"] { --rv-x: -72px; --rv-y: 0px; }
+    .motion-ready .reveal[data-reveal="right"] { --rv-x: 72px; --rv-y: 0px; }
+    .motion-ready .reveal[data-reveal="zoom"] { --rv-y: 40px; --rv-s: .94; }
+
+    .motion-ready .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Section heads: title from the left, lead from the right */
+    .motion-ready .reveal[data-reveal="split"] {
+      opacity: 1;
+      transform: none;
+    }
+
+    .motion-ready .reveal[data-reveal="split"] > * {
+      opacity: 0;
+      transform: translate3d(-64px, 0, 0);
+      transition: opacity 1s var(--ease), transform 1.1s var(--ease);
+    }
+
+    .motion-ready .reveal[data-reveal="split"] > :last-child:not(:first-child) {
+      transform: translate3d(64px, 0, 0);
+      transition-delay: .14s;
+    }
+
+    .motion-ready .reveal[data-reveal="split"].in > * {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (max-width: 680px) {
+      .motion-ready .reveal[data-reveal="left"] { --rv-x: -36px; }
+      .motion-ready .reveal[data-reveal="right"] { --rv-x: 36px; }
+
+      .motion-ready .reveal[data-reveal="split"] > * {
+        transform: translate3d(-32px, 0, 0);
+      }
+
+      .motion-ready .reveal[data-reveal="split"] > :last-child:not(:first-child) {
+        transform: translate3d(32px, 0, 0);
+      }
+    }
   </style>
 </head>
 
@@ -5144,6 +6411,18 @@
     <section class="hx" aria-labelledby="hero-title">
       <div class="hx-bg" aria-hidden="true"></div>
 
+      <div class="hx-photo" aria-hidden="true">
+        <picture>
+          <source type="image/avif"
+            srcset="images/optimized/use-480.avif 480w, images/optimized/use-760.avif 760w, images/optimized/use-1122.avif 1122w"
+            sizes="(max-width: 1024px) 100vw, 52vw">
+          <img src="images/optimized/use-760.webp"
+            srcset="images/optimized/use-480.webp 480w, images/optimized/use-760.webp 760w, images/optimized/use-1122.webp 1122w"
+            sizes="(max-width: 1024px) 100vw, 52vw"
+            alt="" width="1122" height="1402" fetchpriority="high" decoding="async">
+        </picture>
+      </div>
+
       <div class="container hx-grid">
         <div class="hx-copy">
           <p class="hx-eyebrow"><span class="hx-dot" aria-hidden="true"></span>Cloud operations for restaurants &amp; hotels</p>
@@ -5183,15 +6462,9 @@
 
         <div class="hx-stage">
           <span class="hx-note" aria-hidden="true">ILLUSTRATIVE UI</span>
-          <div class="hx-sun" aria-hidden="true"></div>
+          <p class="hx-caption" aria-hidden="true"><span>No.01</span>Built for the pass, the floor<br>&amp; the front desk.</p>
 
-          <figure class="hx-phone">
-            <img src="images/optimized/dashboard-640.webp"
-              srcset="images/optimized/dashboard-320.webp 320w, images/optimized/dashboard-640.webp 640w, images/optimized/dashboard-960.webp 960w"
-              sizes="(max-width: 680px) 220px, 290px"
-              alt="izybe.app hospitality dashboard with active checklists, staff and a task calendar"
-              width="679" height="998" fetchpriority="high">
-          </figure>
+          <div class="hx-pings" id="hx-pings" aria-hidden="true"></div>
 
           <div class="hx-board" aria-hidden="true">
             <div class="hx-board-head">
@@ -5601,26 +6874,115 @@
           </div>
           <p class="lead">Plan, operate, review — then do it again tomorrow, a little better.</p>
         </div>
-        <div class="flow-grid">
-          <article class="flow-card reveal">
-            <span class="big" aria-hidden="true">1</span>
-            <span class="flow-label">01 / PLAN</span>
-            <h3>Prepare the day.</h3>
-            <p>Create reusable checklists, publish shifts and assign tasks to the relevant departments and staff.</p>
-          </article>
-          <article class="flow-card reveal" style="--d:.1s">
-            <span class="big" aria-hidden="true">2</span>
-            <span class="flow-label">02 / OPERATE</span>
-            <h3>Follow the flow.</h3>
-            <p>Record attendance, complete checks, manage stock and keep your connected team informed as work happens.
-            </p>
-          </article>
-          <article class="flow-card reveal" style="--d:.2s">
-            <span class="big" aria-hidden="true">3</span>
-            <span class="flow-label">03 / REVIEW</span>
-            <h3>See the whole picture.</h3>
-            <p>Review completed lists, working hours, stock history and damage reports before planning the next day.</p>
-          </article>
+        <div class="wf reveal">
+          <div class="wf-top">
+            <div class="wf-time" aria-hidden="true"><span class="wf-clock">06:00</span><span class="wf-phase">Plan</span></div>
+            <div class="wf-line" aria-hidden="true">
+              <div class="wf-segs"><span class="wf-seg"><i></i></span><span class="wf-seg"><i></i></span><span class="wf-seg"><i></i></span></div>
+              <div class="wf-ticks"><span>06:00</span><span>10:00</span><span>20:00</span><span>23:00</span></div>
+            </div>
+            <p class="wf-state" aria-hidden="true"><i></i><span>Auto-play</span></p>
+          </div>
+
+          <div class="wf-body">
+            <ol class="wf-steps">
+              <li class="wf-step is-active">
+                <span class="wf-label">01 / PLAN<small>06:00 – 10:00</small></span>
+                <h3><button type="button">Prepare the day.</button></h3>
+                <p>Create reusable checklists, publish shifts and assign tasks to the relevant departments and staff.</p>
+                <span class="wf-prog" aria-hidden="true"><i></i></span>
+              </li>
+              <li class="wf-step">
+                <span class="wf-label">02 / OPERATE<small>10:00 – 20:00</small></span>
+                <h3><button type="button">Follow the flow.</button></h3>
+                <p>Record attendance, complete checks, manage stock and keep your connected team informed as work happens.</p>
+                <span class="wf-prog" aria-hidden="true"><i></i></span>
+              </li>
+              <li class="wf-step">
+                <span class="wf-label">03 / REVIEW<small>20:00 – 23:00</small></span>
+                <h3><button type="button">See the whole picture.</button></h3>
+                <p>Review completed lists, working hours, stock history and damage reports before planning the next day.</p>
+                <span class="wf-prog" aria-hidden="true"><i></i></span>
+              </li>
+            </ol>
+
+            <div class="wf-screen" aria-hidden="true">
+              <div class="wf-chrome"><i></i><i></i><i></i><span>izybe.app / today</span><em>ILLUSTRATIVE UI</em></div>
+              <div class="wf-scenes">
+            <div class="wf-scene" data-scene="0">
+              <div class="wf-bar"><span><svg class="icon" aria-hidden="true"><use href="#i-cal" /></svg>Tomorrow · Planning</span><small>Manager view</small></div>
+              <div class="wf-cols">
+                <div class="wf-card">
+                  <p class="wf-card-h"><svg class="icon" aria-hidden="true"><use href="#i-list" /></svg>Opening checklist <small>Template</small></p>
+                  <ul class="wf-lines">
+                    <li style="--i:0">Fridge temperatures</li>
+                    <li style="--i:1">Allergen board updated</li>
+                    <li style="--i:2">Bar stock counted</li>
+                    <li style="--i:3">Floor &amp; tables ready</li>
+                  </ul>
+                  <p class="wf-assign"><span style="--i:0">Kitchen</span><span style="--i:1">Bar</span><span style="--i:2">Front of house</span></p>
+                </div>
+                <div class="wf-card">
+                  <p class="wf-card-h"><svg class="icon" aria-hidden="true"><use href="#i-users" /></svg>Shift plan <small>Next week</small></p>
+                <div class="wf-grid">
+                  <span></span><b>M</b><b>T</b><b>W</b><b>T</b><b>F</b><b>S</b><b>S</b>
+                  <em>Kitchen</em><i class="on" style="--i:0"></i><i class="on" style="--i:1"></i><i class="on" style="--i:2"></i><i class="on" style="--i:3"></i><i class="on" style="--i:4"></i><i class="on" style="--i:5"></i><i class="" style="--i:6"></i>
+                  <em>Bar</em><i class="" style="--i:7"></i><i class="on" style="--i:8"></i><i class="on" style="--i:9"></i><i class="" style="--i:10"></i><i class="on" style="--i:11"></i><i class="on" style="--i:12"></i><i class="on" style="--i:13"></i>
+                  <em>Floor</em><i class="on" style="--i:14"></i><i class="on" style="--i:15"></i><i class="" style="--i:16"></i><i class="on" style="--i:17"></i><i class="on" style="--i:18"></i><i class="on" style="--i:19"></i><i class="on" style="--i:20"></i>
+                </div>
+                  <div class="wf-swap">
+                    <span class="wf-btn a">Publish shifts <svg class="icon" aria-hidden="true"><use href="#i-arrow" /></svg></span>
+                    <span class="wf-btn b"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Published · 18 staff notified</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="wf-scene" data-scene="1">
+              <div class="wf-bar"><span><i class="wf-rec"></i>Live service</span><small>Kitchen · Opening</small></div>
+              <div class="wf-cols">
+                <div class="wf-card">
+                  <p class="wf-card-h"><svg class="icon" aria-hidden="true"><use href="#i-list" /></svg>Opening checklist <small class="wf-count"><span class="a">0/5</span><span class="b">5/5</span></small></p>
+                  <ul class="wf-checks">
+                    <li style="--i:0"><span class="wf-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><span class="wf-ct">Fridge temperatures</span></li>
+                    <li style="--i:1"><span class="wf-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><span class="wf-ct">Allergen board updated</span></li>
+                    <li style="--i:2"><span class="wf-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><span class="wf-ct">Bar stock counted</span></li>
+                    <li style="--i:3"><span class="wf-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><span class="wf-ct">Floor &amp; tables ready</span></li>
+                    <li style="--i:4"><span class="wf-box"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg></span><span class="wf-ct">Opening cash float</span></li>
+                  </ul>
+                  <div class="wf-meter"><i></i></div>
+                </div>
+                <div class="wf-stack">
+                  <div class="wf-toast" style="--t:.6s"><span class="wf-tico t-ink"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg></span><p><b>Maria clocked in</b><small>Front of house · 08:02</small></p></div>
+                  <div class="wf-toast" style="--t:2.2s"><span class="wf-tico t-amber"><svg class="icon" aria-hidden="true"><use href="#i-box" /></svg></span><p><b>Tomatoes <span class="wf-num"><span class="a">24</span><span class="b">22</span></span> kg</b><small>Stock updated · Kitchen</small></p></div>
+                  <div class="wf-toast" style="--t:3.8s"><span class="wf-tico t-violet"><svg class="icon" aria-hidden="true"><use href="#i-msg" /></svg></span><p><b>Table 12 · allergy note</b><small>Team chat · sent to kitchen</small></p></div>
+                </div>
+              </div>
+            </div>
+            <div class="wf-scene" data-scene="2">
+              <div class="wf-bar"><span><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>End of day · Review</span><small>Today</small></div>
+              <div class="wf-kpis">
+                <div style="--i:0"><small>Checklists</small><b>12/12</b></div>
+                <div style="--i:1"><small>Hours logged</small><b>142 h</b></div>
+                <div style="--i:2"><small>Stock moves</small><b>38</b></div>
+                <div style="--i:3"><small>Damage reports</small><b>2</b></div>
+              </div>
+              <div class="wf-card wf-chart-card">
+                <p class="wf-card-h">Completion this week <small>%</small></p>
+                <div class="wf-chart">
+                  <span style="--i:0;--v:0.62"><i></i><em>M</em></span>
+                  <span style="--i:1;--v:0.78"><i></i><em>T</em></span>
+                  <span style="--i:2;--v:0.7"><i></i><em>W</em></span>
+                  <span style="--i:3;--v:0.88"><i></i><em>T</em></span>
+                  <span style="--i:4;--v:0.94"><i></i><em>F</em></span>
+                  <span style="--i:5;--v:1"><i></i><em>S</em></span>
+                  <span style="--i:6;--v:0.84"><i></i><em>S</em></span>
+                </div>
+              </div>
+              <p class="wf-done"><svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>Day closed · Ready to plan tomorrow</p>
+            </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -5856,15 +7218,14 @@
                 <span class="plus" aria-hidden="true"></span>
               </summary>
               <div class="acc-body">
-                <p>Manage employee records, attendance, breaks and working-hours reports. Authentication can use a PIN
-                  or configured face recognition.</p>
+                <p>Manage employee records, attendance, breaks and working-hours reports. Staff sign in with a personal PIN.</p>
                 <h4>Add and manage staff</h4>
                 <ol>
                   <li>Log in to Staff Management and press Add Staff. Enter first name, last name and a unique staff
                     number.</li>
                   <li>Choose full-time, part-time or agency status, position and department. Agency staff require an
                     agency.</li>
-                  <li>Set a four-digit PIN and optionally add a photo for face recognition.</li>
+                  <li>Set a four-digit PIN for each staff member.</li>
                   <li>Search by name or number, or filter by category, position, department and agency.</li>
                 </ol>
                 <h4>Attendance and reporting</h4>
@@ -6126,8 +7487,7 @@
                   <li>Configure dashboard categories, colors, visibility and damage settings.</li>
                   <li>Manage accounts, roles, module access and editing permissions.</li>
                   <li>Maintain departments, positions and agencies.</li>
-                  <li>Set PIN protection, admin credentials, PIN or face authentication and optional liveness detection.
-                  </li>
+                  <li>Set PIN protection and admin credentials.</li>
                 </ol>
                 <h4>Backup and restore</h4>
                 <p>Export data as JSON, import a previous backup and configure available automatic backup settings.
